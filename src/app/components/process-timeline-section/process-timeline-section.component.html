@@ -1,0 +1,27 @@
+<section class="section process" id="process">
+  <div class="container">
+    <app-section-heading
+      overline="Process"
+      title="How We Bring Your Vision to Life"
+      subtitle="No confusion. No jargon. Just a clear step-by-step path from idea to growth."
+    ></app-section-heading>
+
+    <div class="process__grid">
+      <article
+        class="process__step reveal"
+        appRevealOnScroll
+        *ngFor="let step of steps; let i = index"
+        [ngClass]="bentoClass(i)"
+        [style.transitionDelay.ms]="i * 80"
+      >
+        <span class="process__connector" *ngIf="i < steps.length - 1" aria-hidden="true"></span>
+        <div class="process__head">
+          <div class="process__badge">Step {{ step.step }}</div>
+          <span class="process__number" aria-hidden="true">0{{ step.step }}</span>
+        </div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.copy }}</p>
+      </article>
+    </div>
+  </div>
+</section>

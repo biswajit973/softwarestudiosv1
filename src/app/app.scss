@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-shell__content {
+  isolation: isolate;
+}
+
+.footer-placeholder {
+  min-height: 220px;
+  background: var(--gradient-primary);
+}

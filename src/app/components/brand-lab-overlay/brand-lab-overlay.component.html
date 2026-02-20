@@ -1,0 +1,68 @@
+<aside class="brand-lab" [class.brand-lab--open]="isOpen" aria-label="Brand style utility">
+  <button
+    class="brand-lab__trigger focus-ring"
+    type="button"
+    [attr.aria-expanded]="isOpen"
+    aria-controls="brand-lab-panel"
+    aria-label="Open logo and font switcher"
+    (click)="togglePanel()"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M7 3h10M5 7h14M6.4 11h11.2M8 15h8M10 19h4"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+      />
+    </svg>
+  </button>
+
+  <div class="brand-lab__panel" id="brand-lab-panel" [class.brand-lab__panel--open]="isOpen">
+    <div class="brand-lab__head">
+      <div>
+        <p>Brand Lab</p>
+        <h3>Try 10 logos + 10 fonts</h3>
+      </div>
+      <button class="brand-lab__close focus-ring" type="button" aria-label="Close switcher" (click)="closePanel()">
+        ✕
+      </button>
+    </div>
+
+    <section class="brand-lab__block">
+      <h4>Logo Variants</h4>
+      <div class="brand-lab__grid brand-lab__grid--logo">
+        <button
+          class="brand-lab__option focus-ring"
+          type="button"
+          *ngFor="let option of logoOptions; trackBy: trackById"
+          [class.is-active]="option.id === selectedLogo"
+          (click)="selectLogo(option.id)"
+        >
+          <app-software-studios-logo [compact]="true" [variant]="option.id"></app-software-studios-logo>
+          <span class="brand-lab__label">{{ option.label }}</span>
+          <small>{{ option.note }}</small>
+        </button>
+      </div>
+    </section>
+
+    <section class="brand-lab__block">
+      <h4>Font Presets</h4>
+      <div class="brand-lab__grid brand-lab__grid--font">
+        <button
+          class="brand-lab__option brand-lab__font-option focus-ring"
+          type="button"
+          *ngFor="let option of fontOptions; trackBy: trackById"
+          [class.is-active]="option.id === selectedFont"
+          (click)="selectFont(option.id)"
+        >
+          <div class="brand-lab__font-title">{{ option.label }}</div>
+          <div class="brand-lab__font-preview" [style.font-family]="fontPreviewStack(option.id)">
+            {{ option.preview }}
+          </div>
+          <small>{{ option.note }}</small>
+        </button>
+      </div>
+    </section>
+  </div>
+</aside>

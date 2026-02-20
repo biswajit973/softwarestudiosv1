@@ -1,0 +1,65 @@
+<div class="blog-page">
+  <header class="reader-header">
+    <a class="reader-logo" routerLink="/blogs" aria-label="Back to blogs">
+      <app-software-studios-logo [compact]="true"></app-software-studios-logo>
+      <span>Software Studios Blogs</span>
+    </a>
+
+    <nav class="reader-breadcrumb" aria-label="Breadcrumb" *ngIf="topic() as activeTopic">
+      <a routerLink="/">Home</a>
+      <span>/</span>
+      <a routerLink="/blogs">Blogs</a>
+      <span>/</span>
+      <strong>{{ activeTopic.title }}</strong>
+    </nav>
+  </header>
+
+  <main class="reader-main" *ngIf="topic() as activeTopic; else loadingState">
+    <article class="topic-intro reveal" appRevealOnScroll>
+      <div class="topic-meta">
+        <span>{{ activeTopic.readTime }} read</span>
+        <span>Software Studios Note</span>
+      </div>
+      <h1 class="text-display">{{ activeTopic.title }}</h1>
+      <p class="topic-subtitle">{{ activeTopic.subtitle }}</p>
+      <p class="topic-hook">{{ activeTopic.heroQuote }}</p>
+    </article>
+
+    <section class="topic-content">
+      <article class="topic-section reveal" appRevealOnScroll *ngFor="let section of activeTopic.sections; trackBy: trackSection">
+        <h2>{{ section.heading }}</h2>
+        <p *ngFor="let paragraph of section.paragraphs">{{ paragraph }}</p>
+        <ul *ngIf="section.bullets?.length">
+          <li *ngFor="let bullet of section.bullets">{{ bullet }}</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="takeaways reveal" appRevealOnScroll>
+      <h3>Quick Takeaways</h3>
+      <ul>
+        <li *ngFor="let item of activeTopic.keyTakeaways">{{ item }}</li>
+      </ul>
+    </section>
+
+    <section class="topic-cta reveal" appRevealOnScroll>
+      <p>{{ activeTopic.ctaText }}</p>
+    </section>
+
+    <nav class="topic-nav reveal" appRevealOnScroll>
+      <button type="button" (click)="openTopic(prevTopic()!.slug)" [disabled]="!prevTopic()">
+        ← {{ prevTopic() ? shortTitle(prevTopic()!.title) : 'Previous' }}
+      </button>
+      <a routerLink="/blogs">Back To All Topics</a>
+      <button type="button" (click)="openTopic(nextTopic()!.slug)" [disabled]="!nextTopic()">
+        {{ nextTopic() ? shortTitle(nextTopic()!.title) : 'Next' }} →
+      </button>
+    </nav>
+  </main>
+
+  <ng-template #loadingState>
+    <div class="loading-state">
+      {{ loading() ? 'Loading topic...' : 'Topic not found. Redirecting to blogs...' }}
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,54 @@
+<section class="about-page section">
+  <div class="container">
+    <div class="about-page__hero reveal" appRevealOnScroll>
+      <span class="pill-badge">About Software Studios</span>
+      <h1 class="text-display">A Kkreative Technology Wing Built for Real Indian Business Growth</h1>
+      <p>
+        Software Studios is part of the Kkreative family. Since 2014, our goal has stayed same:
+        make businesses visible online with practical, affordable, and measurable digital solutions.
+      </p>
+      <p>
+        We have worked with startups, local businesses, and large companies. In 12 years, technology
+        changed many times, but our customer-first mindset stayed constant.
+      </p>
+    </div>
+
+    <section class="about-page__identity reveal" appRevealOnScroll>
+      <app-section-heading
+        [center]="false"
+        overline="Identity"
+        title="KOZY KREATIVE CONCEPTS PRIVATE LIMITED"
+        subtitle="CIN: U74140TG2014PTC095318"
+      ></app-section-heading>
+      <p>
+        We believe every business deserves a fair chance to grow digitally. Whether you are in a
+        metro or small town, customers should be able to find and trust you online.
+      </p>
+    </section>
+
+    <section class="about-page__timeline">
+      <app-section-heading
+        overline="Journey"
+        title="12 Years of Learning, Building, and Improving"
+        subtitle="We evolved with each technology shift to deliver better outcomes for customers."
+      ></app-section-heading>
+
+      <div class="about-page__grid">
+        <article class="about-page__milestone reveal" appRevealOnScroll *ngFor="let milestone of milestones; let i = index" [style.transitionDelay.ms]="i * 70">
+          <p class="period">{{ milestone.period }}</p>
+          <h3>{{ milestone.title }}</h3>
+          <p>{{ milestone.summary }}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-page__mission reveal" appRevealOnScroll>
+      <h2>Our Mission</h2>
+      <p>
+        Technology should be useful, clear, and affordable. We design every project with this mindset
+        so your business can grow with confidence, clarity, and speed.
+      </p>
+      <app-primary-cta label="Start with a Free Consultation" routerLink="/contact"></app-primary-cta>
+    </section>
+  </div>
+</section>

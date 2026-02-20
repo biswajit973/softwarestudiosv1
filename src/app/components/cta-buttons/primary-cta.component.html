@@ -1,0 +1,22 @@
+<a
+  *ngIf="routerLink; else primaryHref"
+  class="cta cta--primary focus-ring"
+  [class.cta--navbar]="tone === 'navbar'"
+  [routerLink]="routerLink"
+  [attr.aria-label]="ariaLabel || label"
+>
+  {{ label }}
+</a>
+
+<ng-template #primaryHref>
+  <a
+    class="cta cta--primary focus-ring"
+    [class.cta--navbar]="tone === 'navbar'"
+    [attr.href]="href"
+    [attr.target]="target"
+    [attr.rel]="target === '_blank' ? 'noopener noreferrer' : null"
+    [attr.aria-label]="ariaLabel || label"
+  >
+    {{ label }}
+  </a>
+</ng-template>

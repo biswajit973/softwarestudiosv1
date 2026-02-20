@@ -1,0 +1,201 @@
+:root {
+  --color-primary: #16181d;
+  --color-primary-deep: #000000;
+  --color-secondary: #f2f4f7;
+  --color-surface: #ffffff;
+  --color-accent: #0a84ff;
+  --color-accent-deep: #0066cc;
+  --color-success: #34c759;
+  --color-text: #16181d;
+  --color-text-muted: #5f6368;
+  --color-border: rgba(22, 24, 29, 0.12);
+  --color-card-shadow: rgba(14, 22, 37, 0.07);
+  --color-card-shadow-hover: rgba(14, 22, 37, 0.13);
+  --glass-surface-soft: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(251, 252, 255, 0.82) 46%,
+    rgba(247, 248, 251, 0.74) 100%
+  );
+  --glass-surface: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(252, 253, 255, 0.86) 46%,
+    rgba(248, 249, 252, 0.78) 100%
+  );
+  --glass-surface-strong: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(253, 253, 255, 0.92) 46%,
+    rgba(249, 250, 252, 0.84) 100%
+  );
+  --glass-border: rgba(255, 255, 255, 0.84);
+  --glass-border-soft: rgba(255, 255, 255, 0.68);
+  --glass-shadow: 0 12px 30px rgba(14, 22, 37, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  --glass-shadow-strong:
+    0 20px 44px rgba(14, 22, 37, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.68);
+  --glass-shadow-hover:
+    0 20px 46px rgba(14, 22, 37, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  --color-nav-glass: rgba(255, 255, 255, 0.9);
+  --nav-glass-top: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(255, 255, 255, 0.7) 38%,
+    rgba(245, 245, 247, 0.62) 100%
+  );
+  --nav-glass-scrolled: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(250, 250, 252, 0.9) 48%,
+    rgba(242, 242, 247, 0.86) 100%
+  );
+  --nav-border-top: rgba(255, 255, 255, 0.58);
+  --nav-border-scrolled: rgba(255, 255, 255, 0.78);
+  --nav-shadow-top: 0 10px 24px rgba(14, 22, 37, 0.12);
+  --nav-shadow-scrolled: 0 14px 30px rgba(14, 22, 37, 0.14);
+  --nav-highlight-line: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  --nav-sheen-gradient: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.06) 36%,
+    rgba(255, 255, 255, 0.52) 50%,
+    rgba(255, 255, 255, 0.1) 64%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --nav-link-hover-bg: rgba(255, 255, 255, 0.64);
+  --nav-link-active-bg: rgba(10, 132, 255, 0.14);
+  --nav-menu-glass: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(245, 245, 247, 0.9) 100%
+  );
+  --gradient-primary: linear-gradient(135deg, #000000 0%, #1d1d1f 52%, #3a3a3c 100%);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --section-pad: 92px;
+  --container-max: 1280px;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-soft: var(--glass-shadow);
+  --shadow-hover: var(--glass-shadow-hover);
+  --motion-level-default: 1;
+  --motion-level-reduced: 1;
+  --motion-duration-base: 0.35s;
+  --fx-particles-services: 0;
+  --fx-particles-industries: 0;
+  --fx-particles-testimonials: 0;
+  --fx-particles-pricing: 0;
+  --fx-particles-highlight: 1;
+}
+
+:root[data-font-preset='classic-dm'] {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='manrope-modern'] {
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Manrope', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Manrope', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='nunito-soft'] {
+  --font-display: 'Lora', 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Nunito Sans', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Nunito Sans', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='inter-clarity'] {
+  --font-display: 'Merriweather', 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Inter', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'Roboto Mono', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='poppins-premium'] {
+  --font-display: 'Libre Baskerville', 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Poppins', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Poppins', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='source-balanced'] {
+  --font-display: 'Spectral', 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Source Sans 3', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'Fira Mono', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='work-calm'] {
+  --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Work Sans', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Work Sans', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'Inconsolata', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='lato-trust'] {
+  --font-display: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Lato', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Lato', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'Ubuntu Mono', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='montserrat-luxe'] {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Montserrat', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Montserrat', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-font-preset='rubik-friendly'] {
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Rubik', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-body: 'Rubik', 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', 'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --section-pad: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-pad: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-level-reduced: 0;
+    --fx-particles-highlight: 0;
+  }
+}

@@ -1,0 +1,82 @@
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <app-section-heading
+      overline="Testimonials"
+      title="What Our Clients Say"
+      subtitle="Real feedback from business owners who saw measurable results after going digital."
+    ></app-section-heading>
+
+    <div
+      class="testimonials__wrap reveal"
+      appRevealOnScroll
+      (mouseenter)="pause()"
+      (mouseleave)="resume()"
+      (focusin)="pause()"
+      (focusout)="resume()"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Client testimonials"
+    >
+      <button
+        class="testimonials__control focus-ring"
+        type="button"
+        aria-label="Previous testimonial"
+        aria-controls="testimonialsViewport"
+        (click)="previous()"
+      >
+        ‹
+      </button>
+
+      <div class="testimonials__viewport" id="testimonialsViewport">
+        <div
+          class="testimonials__track"
+          [style.--visible]="visibleCount"
+          [style.--index]="currentIndex"
+        >
+          <article
+            class="testimonials__card"
+            *ngFor="let item of testimonials; let i = index"
+            role="group"
+            [attr.aria-label]="cardAriaLabel(i)"
+          >
+            <div class="testimonials__quote-mark" aria-hidden="true">“</div>
+            <p class="testimonials__quote">{{ item.quote }}</p>
+            <div class="testimonials__meta">
+              <div class="testimonials__avatar" aria-hidden="true">{{ item.name.charAt(0) }}</div>
+              <div>
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.role }}, {{ item.location }}</p>
+              </div>
+            </div>
+            <div class="testimonials__stars" aria-label="Rated {{ item.rating }} out of 5">
+              <span *ngFor="let star of stars">★</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <button
+        class="testimonials__control focus-ring"
+        type="button"
+        aria-label="Next testimonial"
+        aria-controls="testimonialsViewport"
+        (click)="next()"
+      >
+        ›
+      </button>
+    </div>
+
+    <p class="testimonials__status" aria-live="polite">{{ statusText }}</p>
+
+    <div class="testimonials__dots" aria-label="Carousel indicators">
+      <button
+        class="focus-ring"
+        type="button"
+        *ngFor="let page of pages"
+        [class.is-active]="page === currentIndex"
+        (click)="goTo(page)"
+        [attr.aria-label]="'Go to slide ' + (page + 1)"
+      ></button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <app-section-heading
+      overline="Pricing"
+      title="Transparent Pricing. No Surprises."
+      subtitle="Affordable digital solutions with clear scope, clear price, and no hidden surprises."
+    ></app-section-heading>
+
+    <article class="pricing__card reveal" appRevealOnScroll>
+      <p class="pricing__star">🌟 Starting at just</p>
+      <h3>{{ pricing.startingPrice }}</h3>
+      <p class="pricing__copy">
+        Launch your digital presence with practical budget planning. Website, app, AI, and
+        marketing services can be tailored from this starting range.
+      </p>
+
+      <div class="pricing__actions">
+        <app-primary-cta [label]="pricing.ctaPrimary" routerLink="/contact"></app-primary-cta>
+        <app-secondary-cta [label]="pricing.ctaSecondary" [href]="'tel:+916370931250'"></app-secondary-cta>
+      </div>
+
+      <ul class="pricing__points">
+        <li *ngFor="let feature of pricing.features">✓ {{ feature }}</li>
+      </ul>
+    </article>
+  </div>
+</section>

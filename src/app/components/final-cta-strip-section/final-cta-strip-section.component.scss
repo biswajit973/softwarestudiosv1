@@ -1,0 +1,67 @@
+.final-cta {
+  background: var(--gradient-primary);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+}
+
+.final-cta::after {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.34) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(0, 113, 227, 0.32) 1px, transparent 1.9px);
+  background-size:
+    170px 170px,
+    230px 230px;
+  opacity: 0.3;
+  animation: particle-drift 23s ease-in-out infinite alternate;
+}
+
+.final-cta__inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.final-cta h2 {
+  color: #fff;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+}
+
+.final-cta p {
+  max-width: 70ch;
+  margin-inline: auto;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.final-cta__actions {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-cta::after {
+    animation: none;
+  }
+}

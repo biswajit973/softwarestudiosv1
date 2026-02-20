@@ -1,0 +1,99 @@
+.about-page {
+  padding-top: 8rem;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(0, 113, 227, 0.08), transparent 34%),
+    var(--color-secondary);
+}
+
+.about-page__hero {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.about-page__hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4.1rem);
+  line-height: 1.06;
+}
+
+.about-page__hero p {
+  color: var(--color-text-muted);
+  max-width: 72ch;
+}
+
+.about-page__identity {
+  margin-top: 2.2rem;
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  padding: 1.2rem;
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+.about-page__identity p {
+  color: var(--color-text-muted);
+}
+
+.about-page__timeline {
+  margin-top: 2.2rem;
+}
+
+.about-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.about-page__milestone {
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  padding: 1rem;
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+.about-page__milestone .period {
+  margin-bottom: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-deep);
+}
+
+.about-page__milestone h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+
+.about-page__milestone p {
+  color: var(--color-text-muted);
+}
+
+.about-page__mission {
+  margin-top: 2.2rem;
+  background: var(--gradient-primary);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: var(--radius-lg);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1.3rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.about-page__mission h2 {
+  color: #fff;
+}
+
+.about-page__mission p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 860px) {
+  .about-page__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,54 @@
+.insight-strip {
+  background: var(--color-secondary);
+}
+
+.insight-strip__card {
+  background: var(--glass-surface-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  padding: clamp(1rem, 2vw, 2rem);
+  text-align: center;
+  display: grid;
+  gap: 0.9rem;
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+.insight-strip__overline {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent-deep);
+}
+
+.insight-strip__headline {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-style: italic;
+}
+
+.insight-strip__body {
+  max-width: 70ch;
+  margin-inline: auto;
+  color: var(--color-text-muted);
+}
+
+.insight-strip__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.insight-strip__dots button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(29, 29, 31, 0.23);
+}
+
+.insight-strip__dots button.is-active {
+  background: var(--color-accent);
+}

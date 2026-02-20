@@ -1,0 +1,26 @@
+@mixin container {
+  width: min(100% - 2rem, var(--container-max));
+  margin-inline: auto;
+}
+
+@mixin section-spacing {
+  padding-block: var(--section-pad);
+}
+
+@mixin card-base {
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+@mixin card-hover {
+  transition: all 0.35s var(--ease-standard);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glass-shadow-hover);
+  }
+}

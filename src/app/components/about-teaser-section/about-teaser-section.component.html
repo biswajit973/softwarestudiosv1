@@ -1,0 +1,47 @@
+<section class="section about-teaser" id="about-teaser">
+  <div class="container about-teaser__grid">
+    <div class="about-teaser__copy reveal" appRevealOnScroll>
+      <app-section-heading
+        [center]="false"
+        overline="About Software Studios"
+        title="Built for Bharat. Built for Business."
+      ></app-section-heading>
+
+      <div class="about-teaser__story">
+        <p>
+          Good businesses lose customers when they are not visible online. Software Studios was
+          started in 2014 to solve this problem with practical and affordable digital systems.
+        </p>
+        <p>
+          We are Kkreative’s technology wing, focused on helping Indian businesses launch faster,
+          look credible, and convert more inquiries.
+        </p>
+        <p>
+          If your business exists, people should find you, trust you, and reach you in minutes.
+        </p>
+      </div>
+
+      <a
+        class="about-teaser__badge focus-ring"
+        href="https://kkreative.in"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        A Wing of Kkreative
+      </a>
+    </div>
+
+    <aside class="about-teaser__timeline reveal" appRevealOnScroll aria-label="Software Studios timeline">
+      <h3>2014 → 2026</h3>
+      <ul>
+        <li *ngFor="let milestone of milestones">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <p class="year">{{ milestone.year }}</p>
+            <p>{{ milestone.text }}</p>
+          </div>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</section>

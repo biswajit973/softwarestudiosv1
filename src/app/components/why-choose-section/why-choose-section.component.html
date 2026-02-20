@@ -1,0 +1,17 @@
+<section class="section why-choose" id="why-choose">
+  <div class="container">
+    <app-section-heading
+      overline="The Difference"
+      title="Why Businesses Trust Us"
+      subtitle="Simple process, fair pricing, and a customer-first team focused on measurable growth."
+    ></app-section-heading>
+
+    <div class="why-choose__grid">
+      <article class="why-choose__card reveal" appRevealOnScroll *ngFor="let card of cards; let i = index" [style.transitionDelay.ms]="i * 90">
+        <span class="why-choose__icon" aria-hidden="true">{{ card.icon }}</span>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.copy }}</p>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,220 @@
+:host {
+  position: fixed;
+  left: 1rem;
+  bottom: 5.35rem;
+  z-index: 2090;
+}
+
+.brand-lab {
+  position: relative;
+}
+
+.brand-lab__trigger {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-surface-strong);
+  color: var(--color-primary);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  transition:
+    transform 0.24s var(--ease-standard),
+    box-shadow 0.24s var(--ease-standard),
+    border-color 0.24s var(--ease-standard);
+}
+
+.brand-lab__trigger:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 113, 227, 0.36);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.brand-lab__trigger svg {
+  width: 18px;
+  height: 18px;
+}
+
+.brand-lab__panel {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.62rem);
+  width: min(440px, calc(100vw - 1.6rem));
+  max-height: min(68vh, 640px);
+  overflow: auto;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-surface-strong);
+  box-shadow: var(--glass-shadow-strong);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+  padding: 0.8rem 0.78rem;
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  pointer-events: none;
+  transition:
+    opacity 0.24s var(--ease-standard),
+    transform 0.24s var(--ease-standard);
+}
+
+.brand-lab__panel--open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.brand-lab__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  align-items: flex-start;
+  margin-bottom: 0.65rem;
+}
+
+.brand-lab__head p {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.1rem;
+}
+
+.brand-lab__head h3 {
+  font-size: 0.92rem;
+}
+
+.brand-lab__close {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border-soft);
+  background: var(--glass-surface-soft);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-standard);
+}
+
+.brand-lab__close:hover {
+  color: var(--color-primary);
+  border-color: rgba(0, 113, 227, 0.24);
+}
+
+.brand-lab__block + .brand-lab__block {
+  margin-top: 0.72rem;
+}
+
+.brand-lab__block h4 {
+  font-size: 0.76rem;
+  margin-bottom: 0.4rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.brand-lab__grid {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.brand-lab__grid--logo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.brand-lab__grid--font {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.brand-lab__option {
+  border: 1px solid var(--glass-border-soft);
+  border-radius: 12px;
+  background: var(--glass-surface-soft);
+  color: var(--color-text);
+  text-align: left;
+  padding: 0.44rem 0.46rem;
+  cursor: pointer;
+  display: grid;
+  align-content: start;
+  gap: 0.2rem;
+  transition:
+    border-color 0.2s var(--ease-standard),
+    box-shadow 0.2s var(--ease-standard),
+    transform 0.2s var(--ease-standard);
+}
+
+.brand-lab__option:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 113, 227, 0.34);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.brand-lab__option.is-active {
+  border-color: rgba(0, 113, 227, 0.46);
+  box-shadow: 0 12px 24px rgba(0, 113, 227, 0.14);
+}
+
+.brand-lab__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.brand-lab__option small {
+  font-size: 0.62rem;
+  color: var(--color-text-muted);
+}
+
+.brand-lab__font-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.brand-lab__font-preview {
+  font-size: 0.68rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  :host {
+    left: 0.74rem;
+    bottom: 5.2rem;
+  }
+
+  .brand-lab__panel {
+    width: min(430px, calc(100vw - 1.4rem));
+  }
+}
+
+@media (max-width: 640px) {
+  :host {
+    left: 0.74rem;
+    bottom: 4.95rem;
+  }
+
+  .brand-lab__trigger {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .brand-lab__panel {
+    width: calc(100vw - 1.4rem);
+    max-height: min(64vh, 560px);
+    padding: 0.68rem 0.66rem;
+  }
+
+  .brand-lab__grid--logo,
+  .brand-lab__grid--font {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-lab__panel,
+  .brand-lab__trigger,
+  .brand-lab__option {
+    transition-duration: 0.01ms !important;
+  }
+}

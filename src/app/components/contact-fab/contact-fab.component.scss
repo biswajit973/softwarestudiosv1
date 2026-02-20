@@ -1,0 +1,296 @@
+:host {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 2030;
+}
+
+.contact-fab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.54rem;
+}
+
+.contact-fab__mobile-wa {
+  display: none;
+  width: auto;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  background: linear-gradient(140deg, #40d978 0%, #25d366 55%, #1ea654 100%);
+  box-shadow:
+    0 14px 30px rgba(30, 166, 84, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.44);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  gap: 0.36rem;
+  padding: 0 0.72rem 0 0.62rem;
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition:
+    transform 0.22s var(--ease-standard),
+    box-shadow 0.22s var(--ease-standard);
+}
+
+.contact-fab__mobile-wa svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.contact-fab__mobile-wa:hover,
+.contact-fab__mobile-wa:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 34px rgba(30, 166, 84, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52);
+}
+
+.contact-fab__menu {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.54rem);
+  display: grid;
+  gap: 0.45rem;
+  transform: translateY(10px) scale(0.94);
+  transform-origin: bottom left;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.32s var(--ease-standard),
+    opacity 0.28s var(--ease-standard);
+}
+
+.contact-fab--open .contact-fab__menu {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-fab__item {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-surface-strong);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.22s var(--ease-standard),
+    border-color 0.22s var(--ease-standard),
+    box-shadow 0.22s var(--ease-standard),
+    color 0.22s var(--ease-standard);
+}
+
+.contact-fab__item::after {
+  content: '';
+  position: absolute;
+  top: -36%;
+  left: -45%;
+  width: 42%;
+  height: 180%;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 48%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-180%) rotate(18deg);
+  opacity: 0;
+  transition:
+    transform 0.58s var(--ease-standard),
+    opacity 0.24s var(--ease-standard);
+}
+
+.contact-fab__item:hover::after,
+.contact-fab__item:focus-visible::after {
+  transform: translateX(400%) rotate(18deg);
+  opacity: 0.9;
+}
+
+.contact-fab__item:hover,
+.contact-fab__item:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(0, 113, 227, 0.34);
+  color: var(--color-accent-deep);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.contact-fab__icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-fab__item:nth-child(2) .contact-fab__icon svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-fab__label {
+  position: absolute;
+  left: calc(100% + 0.46rem);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-primary);
+  background: var(--glass-surface-strong);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 0.2rem 0.42rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease-standard);
+  white-space: nowrap;
+}
+
+.contact-fab__item:hover .contact-fab__label,
+.contact-fab__item:focus-visible .contact-fab__label {
+  opacity: 1;
+}
+
+.contact-fab__main {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  background: linear-gradient(140deg, #2b8cff 0%, #0071e3 52%, #0051a2 100%);
+  box-shadow:
+    0 16px 32px rgba(0, 81, 162, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.26s var(--ease-standard),
+    box-shadow 0.26s var(--ease-standard);
+}
+
+.contact-fab__main:hover,
+.contact-fab--open .contact-fab__main {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 42px rgba(0, 81, 162, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+}
+
+.contact-fab__main::after {
+  content: '';
+  position: absolute;
+  top: -38%;
+  left: -45%;
+  width: 44%;
+  height: 190%;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.62) 48%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-180%) rotate(18deg);
+  opacity: 0;
+  transition:
+    transform 0.66s var(--ease-standard),
+    opacity 0.24s var(--ease-standard);
+}
+
+.contact-fab__main:hover::after,
+.contact-fab--open .contact-fab__main::after {
+  transform: translateX(420%) rotate(18deg);
+  opacity: 0.95;
+}
+
+.contact-fab__main svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-fab__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.28);
+  animation: none;
+}
+
+@keyframes contact-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.34);
+  }
+
+  70% {
+    box-shadow: 0 0 0 14px rgba(0, 113, 227, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 113, 227, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-fab__menu,
+  .contact-fab__item,
+  .contact-fab__main,
+  .contact-fab__item::after,
+  .contact-fab__main::after,
+  .contact-fab__label {
+    transition-duration: 0.01ms !important;
+  }
+
+  .contact-fab__pulse {
+    animation: none;
+  }
+}
+
+@media (max-width: 980px) {
+  :host {
+    left: auto;
+    bottom: auto;
+  }
+
+  .contact-fab {
+    display: none;
+  }
+
+  .contact-fab__mobile-wa {
+    display: inline-flex;
+    position: fixed;
+    right: 0.72rem;
+    bottom: calc(4.1rem + env(safe-area-inset-bottom, 0px));
+    z-index: 2300;
+  }
+}
+
+:host-context(body.mobile-menu-open) {
+  .contact-fab {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

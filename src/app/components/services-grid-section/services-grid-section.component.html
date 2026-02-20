@@ -1,0 +1,39 @@
+<section class="section services" id="services">
+  <div class="container">
+    <app-section-heading
+      overline="Services"
+      title="What We Build For You"
+      subtitle="Quick snapshot of our most requested services. Explore full details on the Services page."
+    ></app-section-heading>
+
+    <div class="services__grid">
+      <article
+        class="services__card reveal"
+        appRevealOnScroll
+        *ngFor="let service of featuredServices; let i = index"
+        [style.transitionDelay.ms]="i * 70"
+      >
+        <span class="services__icon" aria-hidden="true">{{ service.icon }}</span>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+
+        <p class="services__price" *ngIf="service.priceFrom">{{ service.priceFrom }}</p>
+
+        <a class="link-arrow focus-ring" [routerLink]="routePath(service)" [fragment]="routeFragment(service)">
+          Learn More <span aria-hidden="true">→</span>
+        </a>
+      </article>
+    </div>
+
+    <p class="services__note reveal" appRevealOnScroll>
+      From website launch to AI-driven operations, we deliver practical systems that directly improve visibility, leads, and growth.
+    </p>
+
+    <div class="services__actions reveal" appRevealOnScroll>
+      <app-primary-cta
+        [label]="remainingServicesCount > 0 ? 'Explore All Services (' + remainingServicesCount + ' more)' : 'Explore All Services'"
+        routerLink="/services"
+      ></app-primary-cta>
+    </div>
+  </div>
+</section>

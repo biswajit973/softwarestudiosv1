@@ -1,0 +1,9 @@
+[build]
+  base = "softwarestudios"
+  command = "npm ci && npm run build -- --configuration production && cp public/_redirects dist/softwarestudios/browser/_redirects"
+  publish = "dist/softwarestudios/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,20 @@
+<section class="section insight-strip" aria-labelledby="insight-title">
+  <div class="container">
+    <article class="insight-strip__card reveal" appRevealOnScroll [@fadeSwap]="currentIndex">
+      <p class="insight-strip__overline" id="insight-title">Did You Know?</p>
+      <h3 class="insight-strip__headline text-display">{{ insights[currentIndex].headline }}</h3>
+      <p class="insight-strip__body">{{ insights[currentIndex].body }}</p>
+
+      <div class="insight-strip__dots" aria-label="Insight indicators">
+        <button
+          *ngFor="let insight of insights; let i = index"
+          type="button"
+          class="focus-ring"
+          [class.is-active]="currentIndex === i"
+          [attr.aria-label]="'Show insight ' + (i + 1)"
+          (click)="show(i)"
+        ></button>
+      </div>
+    </article>
+  </div>
+</section>

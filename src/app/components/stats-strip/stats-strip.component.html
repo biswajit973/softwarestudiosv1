@@ -1,0 +1,9 @@
+<section class="stats-strip" aria-label="Software Studios key stats">
+  <div class="container stats-strip__grid reveal" appRevealOnScroll>
+    <div class="stats-strip__item" *ngFor="let stat of stats; let last = last">
+      <p class="stats-strip__value" [appCountUp]="stat.value" [countSuffix]="stat.suffix" [countDurationMs]="stat.durationMs"></p>
+      <p class="stats-strip__label">{{ stat.label }}</p>
+      <span class="stats-strip__divider" *ngIf="!last" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>

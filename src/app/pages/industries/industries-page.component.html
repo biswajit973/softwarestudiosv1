@@ -1,0 +1,36 @@
+<section class="detail-hero section">
+  <div class="container reveal" appRevealOnScroll>
+    <span class="pill-badge">Industries We Serve</span>
+    <h1 class="text-display">Built for Businesses Like Yours</h1>
+    <p>
+      We work with professionals, institutions, and growth-focused companies across India. Every
+      solution is customized to your customer journey and sales process.
+    </p>
+  </div>
+</section>
+
+<section class="section industries-page">
+  <div class="container">
+    <app-section-heading
+      overline="Coverage"
+      title="15+ Sectors. One Reliable Technology Partner."
+      subtitle="From healthcare to manufacturing, we deliver simple digital systems that generate measurable business value."
+    ></app-section-heading>
+
+    <div class="industries-page__grid">
+      <article class="industries-page__card reveal" appRevealOnScroll *ngFor="let item of industries; let i = index" [style.transitionDelay.ms]="i * 40">
+        <span class="icon" aria-hidden="true">{{ item.icon }}</span>
+        <h2>{{ item.label }}</h2>
+        <p>{{ item.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section industries-page__cta">
+  <div class="container reveal" appRevealOnScroll>
+    <h2>Not sure if your sector is listed?</h2>
+    <p>If your business serves customers, we can build a digital setup that helps you grow faster.</p>
+    <app-primary-cta label="Talk to Our Team" routerLink="/contact"></app-primary-cta>
+  </div>
+</section>

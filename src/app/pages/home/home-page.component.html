@@ -1,0 +1,22 @@
+<app-hero-section></app-hero-section>
+<app-stats-strip></app-stats-strip>
+<app-about-teaser-section></app-about-teaser-section>
+<app-why-choose-section></app-why-choose-section>
+<app-services-grid-section></app-services-grid-section>
+<app-industries-grid-section></app-industries-grid-section>
+<app-process-timeline-section></app-process-timeline-section>
+
+@defer (on viewport) {
+  <app-testimonials-carousel-section></app-testimonials-carousel-section>
+} @placeholder {
+  <section class="section home-skeleton" aria-hidden="true"></section>
+}
+
+@defer (on viewport) {
+  <app-insight-strip-section></app-insight-strip-section>
+} @placeholder {
+  <section class="section home-skeleton" aria-hidden="true"></section>
+}
+
+<app-pricing-highlight-section></app-pricing-highlight-section>
+<app-final-cta-strip-section></app-final-cta-strip-section>

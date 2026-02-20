@@ -1,0 +1,75 @@
+<button class="chatbot-trigger focus-ring" (click)="toggleChat()" [class.active]="isOpen" aria-label="Open chat assistant">
+  <span class="notif-dot" aria-hidden="true"></span>
+  <svg class="chat-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+</button>
+
+<section class="chatbot-window" [class.open]="isOpen" aria-label="Software Studios chatbot">
+  <header class="cb-header">
+    <div class="cb-avatar" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M6 18L12 6L18 18"/></svg>
+    </div>
+    <div class="cb-header-info">
+      <h4>Software Studios Assistant</h4>
+      <span><span class="cb-online-dot"></span> Online now</span>
+    </div>
+  </header>
+
+  <div class="cb-messages" #messagesBox role="log" aria-live="polite">
+    <article class="cb-msg" *ngFor="let msg of messages; trackBy: trackMessage" [class.bot]="msg.sender === 'bot'" [class.user]="msg.sender === 'user'">
+      <div class="cb-typing" *ngIf="msg.typing"><span></span><span></span><span></span></div>
+      <ng-container *ngIf="!msg.typing">
+        <div class="cb-bubble">
+          <p class="cb-line" *ngFor="let line of msg.lines">{{ line }}</p>
+
+          <ul class="cb-bullets" *ngIf="msg.bullets?.length">
+            <li *ngFor="let bullet of msg.bullets">{{ bullet }}</li>
+          </ul>
+
+          <div class="cb-links" *ngIf="msg.links?.length">
+            <a
+              *ngFor="let link of msg.links; trackBy: trackLink"
+              [href]="link.href"
+              [attr.target]="link.target || null"
+              [attr.rel]="link.target === '_blank' ? 'noopener noreferrer' : null"
+              class="focus-ring"
+            >
+              {{ link.label }}
+            </a>
+          </div>
+        </div>
+        <div class="cb-time">{{ msg.time }}</div>
+      </ng-container>
+    </article>
+  </div>
+
+  <div class="cb-suggestions-dock" [class.closed]="!suggestionsOpen" id="chatSuggestions">
+    <div class="cb-suggestions-head">
+      <span>Suggestions</span>
+      <button type="button" class="focus-ring" (click)="toggleSuggestions()" [attr.aria-expanded]="suggestionsOpen" aria-controls="chatSuggestions">
+        {{ suggestionsOpen ? 'Hide' : 'Show' }}
+      </button>
+    </div>
+
+    <div class="cb-quick-grid" *ngIf="suggestionsOpen">
+      <button type="button" class="cb-quick-btn focus-ring" *ngFor="let q of quickQuestions; trackBy: trackQuick" (click)="onQuickAsk(q)">
+        {{ q }}
+      </button>
+    </div>
+  </div>
+
+  <footer class="cb-input-area">
+    <input
+      type="text"
+      class="cb-input focus-ring"
+      placeholder="Type your question..."
+      autocomplete="off"
+      [(ngModel)]="inputText"
+      (keydown)="onInputKeydown($event)"
+      #inputEl
+    />
+    <button class="cb-send focus-ring" type="button" (click)="onSend()" [disabled]="!inputText.trim()" aria-label="Send message">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </footer>
+</section>

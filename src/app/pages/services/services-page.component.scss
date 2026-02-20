@@ -1,0 +1,138 @@
+.detail-hero {
+  padding-top: 7.4rem;
+  padding-bottom: 2.6rem;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(0, 113, 227, 0.08), transparent 34%),
+    var(--color-secondary);
+}
+
+.detail-hero h1 {
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  margin: 1rem 0 0.55rem;
+}
+
+.detail-hero p {
+  max-width: 70ch;
+  color: var(--color-text-muted);
+}
+
+.detail-services {
+  background: var(--color-secondary);
+  padding-top: 2.1rem;
+  padding-bottom: 2.8rem;
+}
+
+.detail-services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.detail-services__card {
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.62rem;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+}
+
+.detail-services__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 1.15rem;
+  background: rgba(0, 113, 227, 0.18);
+}
+
+.detail-services__card h2 {
+  font-size: 1.2rem;
+}
+
+.detail-services__card p {
+  color: var(--color-text-muted);
+}
+
+.detail-services__card ul {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.detail-services__card li {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.detail-services__card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-deep);
+}
+
+.detail-pricing {
+  background: var(--color-secondary);
+  padding-top: 1.1rem;
+  padding-bottom: 4.4rem;
+}
+
+.detail-pricing article {
+  background: var(--gradient-primary);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-lg);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1.4rem;
+  box-shadow: 0 14px 30px rgba(15, 52, 96, 0.26);
+}
+
+.detail-pricing .label {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.detail-pricing h2 {
+  color: var(--color-accent);
+  margin: 0.4rem 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.detail-pricing p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.detail-pricing .actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 860px) {
+  .detail-hero {
+    padding-top: 6.9rem;
+    padding-bottom: 2rem;
+  }
+
+  .detail-services {
+    padding-top: 1.5rem;
+    padding-bottom: 2.1rem;
+  }
+
+  .detail-pricing {
+    padding-top: 0.9rem;
+    padding-bottom: 3.1rem;
+  }
+
+  .detail-services__grid {
+    grid-template-columns: 1fr;
+  }
+}

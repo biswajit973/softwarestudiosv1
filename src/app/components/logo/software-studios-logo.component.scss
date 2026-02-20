@@ -1,0 +1,105 @@
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--color-primary);
+
+  &__mark {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  &__dot {
+    fill: var(--color-accent);
+  }
+
+  &__dot-soft {
+    fill: var(--color-accent);
+    opacity: 0.76;
+  }
+
+  &__text {
+    display: grid;
+    gap: 0.05rem;
+  }
+
+  &__name {
+    font-family: var(--font-heading);
+    font-size: 1.04rem;
+    line-height: 1;
+
+    span {
+      font-weight: 500;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__tag {
+    font-family: var(--font-mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.56rem;
+    color: var(--color-text-muted);
+  }
+}
+
+.brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell {
+  transform-origin: center;
+  transition:
+    opacity 0.34s var(--ease-standard),
+    transform 0.34s var(--ease-standard),
+    filter 0.34s var(--ease-standard);
+}
+
+.brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--2,
+.brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--3,
+.brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--4 {
+  opacity: 0.42;
+}
+
+.brand-logo:hover .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--1,
+.brand-logo:focus-within .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--1 {
+  transform: translate(-0.6px, -0.8px) scale(1.02);
+  opacity: 1;
+}
+
+.brand-logo:hover .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--2,
+.brand-logo:focus-within .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--2 {
+  transform: translate(0.8px, -0.8px) scale(1.02);
+  opacity: 1;
+  filter: drop-shadow(0 0 2px rgba(0, 113, 227, 0.4));
+  transition-delay: 0.04s;
+}
+
+.brand-logo:hover .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--3,
+.brand-logo:focus-within .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--3 {
+  transform: translate(-0.7px, 0.8px) scale(1.02);
+  opacity: 1;
+  filter: drop-shadow(0 0 2px rgba(0, 113, 227, 0.35));
+  transition-delay: 0.08s;
+}
+
+.brand-logo:hover .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--4,
+.brand-logo:focus-within .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--4 {
+  transform: translate(0.85px, 0.85px) scale(1.02);
+  opacity: 1;
+  filter: drop-shadow(0 0 2px rgba(0, 113, 227, 0.45));
+  transition-delay: 0.12s;
+}
+
+.brand-logo--compact .brand-logo__mark {
+  width: 34px;
+  height: 34px;
+}
+
+.brand-logo--light {
+  color: #fff;
+
+  .brand-logo__tag {
+    color: rgba(255, 255, 255, 0.72);
+  }
+}

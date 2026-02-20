@@ -1,0 +1,41 @@
+<section class="detail-hero section">
+  <div class="container reveal" appRevealOnScroll>
+    <span class="pill-badge">What We Build For You</span>
+    <h1 class="text-display">Services Built to Get You Found and Chosen</h1>
+    <p>
+      From websites and apps to AI chatbots and automation, we build practical systems that improve
+      visibility, trust, and lead conversion.
+    </p>
+  </div>
+</section>
+
+<section class="section detail-services">
+  <div class="container">
+    <div class="detail-services__grid">
+      <article class="detail-services__card reveal" appRevealOnScroll *ngFor="let service of services; let i = index" [id]="service.id" [style.transitionDelay.ms]="i * 60">
+        <span class="detail-services__icon" aria-hidden="true">{{ service.icon }}</span>
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.description }}</p>
+        <ul>
+          <li>Business-first planning before execution starts</li>
+          <li>Fast, mobile-friendly, and customer-focused experience</li>
+          <li>Clear timeline, launch support, and post-launch guidance</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section detail-pricing">
+  <div class="container reveal" appRevealOnScroll>
+    <article>
+      <p class="label">Transparent Pricing</p>
+      <h2>Starting from {{ pricing.startingPrice }}</h2>
+      <p>Tell us your goal. We will propose a right-fit package with clear deliverables and pricing.</p>
+      <div class="actions">
+        <app-primary-cta label="Get Free Consultation" routerLink="/contact"></app-primary-cta>
+        <app-secondary-cta label="WhatsApp for Quote" [href]="whatsappHref" target="_blank"></app-secondary-cta>
+      </div>
+    </article>
+  </div>
+</section>

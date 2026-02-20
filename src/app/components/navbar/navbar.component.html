@@ -1,0 +1,66 @@
+<header class="navbar" [class.navbar--scrolled]="isScrolled">
+  <div class="container navbar__stack">
+    <div class="navbar__surface">
+      <div class="navbar__inner">
+        <a class="navbar__brand focus-ring" routerLink="/" aria-label="Software Studios home" (click)="closeMenu()">
+          <app-software-studios-logo></app-software-studios-logo>
+        </a>
+
+        <nav class="navbar__links" aria-label="Primary navigation">
+          <a
+            class="navbar__link focus-ring"
+            *ngFor="let item of navItems"
+            [routerLink]="item.route"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+          >
+            {{ item.label }}
+          </a>
+        </nav>
+
+        <div class="navbar__cta">
+          <app-primary-cta label="Get Free Consultation" routerLink="/contact" tone="navbar"></app-primary-cta>
+        </div>
+
+        <button
+          class="navbar__menu-btn focus-ring"
+          type="button"
+          aria-label="Toggle menu"
+          [attr.aria-expanded]="isMenuOpen"
+          (click)="toggleMenu()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="navbar__mobile" [class.navbar__mobile--open]="isMenuOpen">
+      <div class="navbar__mobile-panel">
+        <div class="navbar__mobile-inner">
+          <a
+            class="navbar__mobile-link focus-ring"
+            *ngFor="let item of navItems"
+            [routerLink]="item.route"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+            (click)="closeMenu()"
+          >
+            {{ item.label }}
+          </a>
+          <app-primary-cta label="Get Free Consultation" routerLink="/contact" tone="navbar"></app-primary-cta>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="navbar__backdrop"
+    type="button"
+    [class.navbar__backdrop--open]="isMenuOpen"
+    (click)="closeMenu()"
+    [attr.aria-hidden]="!isMenuOpen"
+    tabindex="-1"
+  ></button>
+</header>

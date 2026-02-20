@@ -1,0 +1,20 @@
+<a
+  *ngIf="routerLink; else secondaryHref"
+  class="cta cta--secondary focus-ring"
+  [routerLink]="routerLink"
+  [attr.aria-label]="ariaLabel || label"
+>
+  {{ label }}
+</a>
+
+<ng-template #secondaryHref>
+  <a
+    class="cta cta--secondary focus-ring"
+    [attr.href]="href"
+    [attr.target]="target"
+    [attr.rel]="target === '_blank' ? 'noopener noreferrer' : null"
+    [attr.aria-label]="ariaLabel || label"
+  >
+    {{ label }}
+  </a>
+</ng-template>

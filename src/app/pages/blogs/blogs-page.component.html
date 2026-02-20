@@ -1,0 +1,60 @@
+<div class="blogs-page">
+  <section class="blogs-hero section">
+    <div class="container">
+      <article class="hero-editorial reveal" appRevealOnScroll>
+        <p class="pill-badge">Software Studios Blog</p>
+        <h1 class="text-display">Simple Tech Insights for Business Growth</h1>
+        <p>
+          Simple writing, practical ideas, and real examples. These insights help business owners
+          take better digital decisions without technical confusion.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-inline" [routerLink]="['/blogs', featuredTopic.slug]">Read Featured</a>
+          <a class="btn-inline btn-inline--ghost" routerLink="/contact">Talk to Advisor</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="topics-directory section">
+    <div class="container directory-layout">
+      <section class="topic-column">
+        <article class="featured-card reveal" appRevealOnScroll>
+          <div class="featured-meta">
+            <span>{{ featuredTopic.readTime }} read</span>
+            <span class="featured-badge">Featured</span>
+          </div>
+          <h2>{{ featuredTopic.title }}</h2>
+          <p>{{ featuredTopic.summary }}</p>
+          <button type="button" class="btn-inline" (click)="openTopic(featuredTopic.slug)">
+            Read Full Insight
+          </button>
+        </article>
+
+        <div class="topic-grid">
+          <article class="topic-card reveal" appRevealOnScroll *ngFor="let topic of otherTopics; trackBy: trackTopic">
+            <span class="topic-time">{{ topic.readTime }}</span>
+            <h3>{{ topic.title }}</h3>
+            <p>{{ topic.summary }}</p>
+            <button type="button" class="btn-inline btn-inline--ghost" (click)="openTopic(topic.slug)">
+              Open Topic
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <aside class="quick-help reveal" appRevealOnScroll>
+        <h3>Need Quick Help?</h3>
+        <p>Discuss your business goal directly with the Software Studios team.</p>
+
+        <a class="quick-link" [href]="'tel:' + contact.phone">Call: +91 63709 31250</a>
+        <a class="quick-link quick-link--wa" [href]="whatsappHref" target="_blank" rel="noopener noreferrer">
+          Ping on WhatsApp
+        </a>
+        <a class="quick-link" [href]="'mailto:' + contact.email">Email: {{ contact.email }}</a>
+
+        <small>{{ contact.hours }}</small>
+      </aside>
+    </div>
+  </section>
+</div>

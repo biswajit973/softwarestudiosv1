@@ -1,0 +1,29 @@
+<section class="section industries" id="industries-home">
+  <div class="container">
+    <app-section-heading
+      overline="Industries"
+      title="Trusted Across Every Industry"
+      subtitle="Featured sectors we support. Explore the full Industries page for complete coverage."
+    ></app-section-heading>
+
+    <div class="industries__grid">
+      <article
+        class="industries__tile reveal"
+        appRevealOnScroll
+        *ngFor="let industry of featuredIndustries; let i = index"
+        [style.transitionDelay.ms]="i * 45"
+      >
+        <span class="industries__icon" aria-hidden="true">{{ industry.icon }}</span>
+        <h3>{{ industry.label }}</h3>
+        <p>{{ industry.description }}</p>
+      </article>
+    </div>
+
+    <div class="industries__actions reveal" appRevealOnScroll>
+      <app-primary-cta
+        [label]="hiddenCount > 0 ? 'See All Industries (' + hiddenCount + ' more)' : 'See All Industries'"
+        routerLink="/industries"
+      ></app-primary-cta>
+    </div>
+  </div>
+</section>
