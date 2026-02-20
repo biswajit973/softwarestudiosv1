@@ -1,12 +1,8 @@
 <section class="contact-page section">
   <div class="container contact-page__grid">
     <div class="contact-page__left reveal" appRevealOnScroll>
-      <app-section-heading
-        [center]="false"
-        overline="Contact"
-        title="Get a Free Growth Consultation"
-        subtitle="Tell us your business goal. We will suggest a practical digital roadmap in simple language."
-      ></app-section-heading>
+      <app-section-heading [center]="false" overline="Contact" title="Get a Free Growth Consultation"
+        subtitle="Tell us your business goal. We will suggest a practical digital roadmap in simple language."></app-section-heading>
 
       <ul class="contact-page__details">
         <li><strong>Phone:</strong> <a [href]="'tel:' + contact.phone">+91 63709 31250</a></li>
@@ -27,48 +23,40 @@
     </div>
 
     <form class="contact-page__form reveal" appRevealOnScroll (ngSubmit)="submit()" novalidate>
+      <div class="form-header">
+        <h3>Quick Message</h3>
+        <p>Fill out the form below and we'll get back to you shortly.</p>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <input class="focus-ring" type="text" name="name" [(ngModel)]="form.name" placeholder="Your Name *" />
+        </label>
+        <label>
+          <input class="focus-ring" type="tel" name="phone" [(ngModel)]="form.phone" placeholder="Contact Number *" />
+        </label>
+      </div>
+
       <label>
-        Name*
-        <input class="focus-ring" type="text" name="name" [(ngModel)]="form.name" />
+        <input class="focus-ring" type="email" name="email" [(ngModel)]="form.email"
+          placeholder="Email Address (Optional)" />
       </label>
 
       <label>
-        Business Name*
-        <input class="focus-ring" type="text" name="business" [(ngModel)]="form.business" />
+        <textarea class="focus-ring" rows="4" name="message" [(ngModel)]="form.message"
+          placeholder="How can we help you? *"></textarea>
       </label>
 
-      <label>
-        What do you need?*
-        <textarea class="focus-ring" rows="4" name="need" [(ngModel)]="form.need"></textarea>
-      </label>
+      <p class="contact-page__error" *ngIf="showValidation && !isValid">Please fill out your Name, Contact, and Message.
+      </p>
 
-      <label>
-        Phone (optional)
-        <input class="focus-ring" type="tel" name="phone" [(ngModel)]="form.phone" />
-      </label>
-
-      <label>
-        Email (optional)
-        <input class="focus-ring" type="email" name="email" [(ngModel)]="form.email" />
-      </label>
-
-      <fieldset>
-        <legend>Preferred contact channel</legend>
-        <label><input type="radio" name="channel" value="call" [(ngModel)]="form.channel" /> Call</label>
-        <label><input type="radio" name="channel" value="whatsapp" [(ngModel)]="form.channel" /> WhatsApp</label>
-        <label><input type="radio" name="channel" value="email" [(ngModel)]="form.channel" /> Email</label>
-      </fieldset>
-
-      <p class="contact-page__error" *ngIf="showValidation && !isValid">Please fill Name, Business Name, and Need.</p>
-
-      <button class="contact-page__submit focus-ring" type="submit">Show My Best Contact Option</button>
+      <button class="contact-page__submit focus-ring" type="submit">Submit Request</button>
 
       <div class="contact-page__handoff" *ngIf="submitted">
-        <p>Great. Your summary is ready. Choose how you want to connect now:</p>
+        <p>Great! Choose how you want to send this to us:</p>
         <div class="contact-page__handoff-actions">
-          <a class="focus-ring" [href]="'tel:' + contact.phone">Call</a>
-          <a class="focus-ring" [href]="whatsappHref" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <a class="focus-ring" [href]="mailtoHref">Email</a>
+          <a class="handoff-btn wa focus-ring" [href]="whatsappHref" target="_blank" rel="noopener noreferrer">Send via
+            WhatsApp</a>
         </div>
         <button type="button" class="contact-page__reset focus-ring" (click)="reset()">Reset form</button>
       </div>

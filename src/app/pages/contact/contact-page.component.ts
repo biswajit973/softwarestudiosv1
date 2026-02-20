@@ -6,8 +6,6 @@ import { SectionHeadingComponent } from '../../components/section-heading/sectio
 import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scroll.directive';
 import { SecondaryCtaComponent } from '../../components/cta-buttons/secondary-cta.component';
 
-type PreferredChannel = 'call' | 'whatsapp' | 'email';
-
 @Component({
   selector: 'app-contact-page',
   standalone: true,
@@ -20,38 +18,29 @@ export class ContactPageComponent {
 
   form = {
     name: '',
-    business: '',
-    need: '',
     phone: '',
     email: '',
-    channel: 'whatsapp' as PreferredChannel
+    message: ''
   };
 
   submitted = false;
   showValidation = false;
 
   get isValid(): boolean {
-    return Boolean(this.form.name.trim() && this.form.business.trim() && this.form.need.trim());
+    return Boolean(this.form.name.trim() && this.form.phone.trim() && this.form.message.trim());
   }
 
   get handoffMessage(): string {
     return [
       `Name: ${this.form.name || 'Not provided'}`,
-      `Business: ${this.form.business || 'Not provided'}`,
-      `Need: ${this.form.need || 'Not provided'}`,
-      `Phone: ${this.form.phone || 'Not provided'}`,
-      `Email: ${this.form.email || 'Not provided'}`
+      `Contact: ${this.form.phone || 'Not provided'}`,
+      `Email: ${this.form.email || 'Not provided'}`,
+      `Message: ${this.form.message || 'Not provided'}`
     ].join('\n');
   }
 
   get whatsappHref(): string {
     return `https://wa.me/${this.contact.whatsappPhone}?text=${encodeURIComponent(this.handoffMessage)}`;
-  }
-
-  get mailtoHref(): string {
-    const subject = encodeURIComponent('Free Consultation Request - Software Studios');
-    const body = encodeURIComponent(this.handoffMessage);
-    return `mailto:${this.contact.email}?subject=${subject}&body=${body}`;
   }
 
   submit(): void {
@@ -68,11 +57,9 @@ export class ContactPageComponent {
   reset(): void {
     this.form = {
       name: '',
-      business: '',
-      need: '',
       phone: '',
       email: '',
-      channel: 'whatsapp'
+      message: ''
     };
     this.submitted = false;
     this.showValidation = false;
