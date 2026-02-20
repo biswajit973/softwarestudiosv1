@@ -1,10 +1,10 @@
 .insight-strip {
-  background: var(--color-surface);
+  background: var(--color-surface-raised);
 }
 
 .insight-strip__card {
   background: var(--glass-surface-strong);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow);
   padding: clamp(1rem, 2vw, 2rem);
@@ -21,7 +21,6 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--color-accent);
-  text-shadow: 0 0 10px var(--color-accent-glow);
 }
 
 .insight-strip__headline {
@@ -48,12 +47,11 @@
   height: 9px;
   border-radius: 50%;
   border: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.12);
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .insight-strip__dots button.is-active {
   background: var(--color-accent);
-  box-shadow: 0 0 8px var(--color-accent-glow);
 }

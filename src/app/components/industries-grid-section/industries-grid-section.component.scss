@@ -10,14 +10,10 @@
 
 .industries__tile {
   background: var(--glass-surface);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: var(--radius-lg);
   padding: 1.25rem;
-  transition:
-    transform 0.4s var(--ease-spring),
-    box-shadow 0.4s var(--ease-spring),
-    border-color 0.4s var(--ease-spring),
-    background 0.4s var(--ease-spring);
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-spring), border-color 0.4s var(--ease-spring), background 0.4s var(--ease-spring);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(15px) saturate(120%);
   -webkit-backdrop-filter: blur(15px) saturate(120%);
@@ -32,28 +28,28 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent), var(--color-accent-2), transparent);
   opacity: 0;
   transition: opacity 0.4s var(--ease-standard);
 }
 
 .industries__tile:hover {
   transform: translateY(-5px) scale(1.02);
-  border-color: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 113, 227, 0.12);
   box-shadow: var(--shadow-hover);
   background: var(--glass-surface-strong);
 }
 
 .industries__tile:hover::after {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .industries__icon {
   width: 2.25rem;
   height: 2.25rem;
-  border-radius: 8px;
-  background: rgba(179, 136, 255, 0.08);
-  border: 1px solid rgba(179, 136, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.08);
   margin-bottom: 0.52rem;
   display: grid;
   place-items: center;

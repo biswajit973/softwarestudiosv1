@@ -22,9 +22,9 @@
 .about-teaser__badge {
   width: fit-content;
   margin-top: 0.2rem;
-  background: rgba(0, 229, 255, 0.06);
+  background: rgba(0, 113, 227, 0.06);
   color: var(--color-accent);
-  border: 1px solid rgba(0, 229, 255, 0.15);
+  border: 1px solid rgba(0, 113, 227, 0.12);
   padding: 0.42rem 0.85rem;
   border-radius: var(--radius-pill);
   font-family: var(--font-mono);
@@ -35,15 +35,11 @@
 
 .about-teaser__timeline {
   background: var(--glass-surface);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   padding: 1.5rem;
-  transition:
-    background 0.4s var(--ease-spring),
-    border-color 0.4s var(--ease-spring),
-    box-shadow 0.4s var(--ease-spring),
-    transform 0.4s var(--ease-spring);
+  transition: background 0.4s var(--ease-spring), border-color 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-spring), transform 0.4s var(--ease-spring);
   backdrop-filter: blur(15px) saturate(120%);
   -webkit-backdrop-filter: blur(15px) saturate(120%);
 }
@@ -51,7 +47,7 @@
 .about-teaser__timeline:hover {
   transform: translateY(-4px) scale(1.01);
   background: var(--glass-surface-strong);
-  border-color: rgba(0, 229, 255, 0.2);
+  border-color: rgba(0, 113, 227, 0.12);
   box-shadow: var(--shadow-hover);
 }
 
@@ -81,7 +77,6 @@
   bottom: 0.3rem;
   width: 2px;
   background: linear-gradient(to bottom, var(--color-accent), var(--color-accent-2));
-  box-shadow: 0 0 10px var(--color-accent-glow);
 }
 
 .about-teaser__timeline li {
@@ -99,7 +94,6 @@
   margin-top: 0.2rem;
   position: relative;
   z-index: 1;
-  box-shadow: 0 0 8px var(--color-accent-glow);
 }
 
 .about-teaser__timeline .year {

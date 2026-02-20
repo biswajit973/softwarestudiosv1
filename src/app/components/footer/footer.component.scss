@@ -1,6 +1,6 @@
 .footer {
   background: var(--gradient-primary);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   padding-block: 2.5rem 0.7rem;
   position: relative;
 }
@@ -12,8 +12,8 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-  opacity: 0.3;
+  background: linear-gradient(90deg, transparent, rgba(0, 113, 227, 0.3), transparent);
+  opacity: 0.5;
 }
 
 .footer__grid {
@@ -31,22 +31,21 @@
 }
 
 .footer__col h3 {
-  color: var(--color-primary);
+  color: #fff;
   font-size: 0.86rem;
   margin-bottom: 0.14rem;
 }
 
 .footer__col a,
 .footer__col p {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.79rem;
   line-height: 1.4;
-  transition: color 0.25s var(--ease-standard);
+  transition: color 0.25s;
 }
 
 .footer__col a:hover {
   color: var(--color-accent);
-  text-shadow: 0 0 10px var(--color-accent-glow);
 }
 
 .footer__brand {
@@ -58,11 +57,11 @@
   font-size: 0.63rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-text-dim);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer__tagline {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
   max-width: 26ch;
 }
 
@@ -78,8 +77,8 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
   transition: all 0.4s var(--ease-spring);
 }
 
@@ -92,7 +91,7 @@
 .footer__social:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
-  box-shadow: 0 4px 16px var(--color-accent-glow), 0 0 20px rgba(0, 229, 255, 0.1);
+  box-shadow: 0 4px 16px var(--color-accent-glow);
   transform: translateY(-3px) scale(1.08);
 }
 
@@ -103,9 +102,9 @@
 .footer__bottom {
   margin-top: 0.86rem;
   padding-top: 0.56rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.74rem;
-  color: var(--color-text-dim);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 @media (max-width: 1024px) {

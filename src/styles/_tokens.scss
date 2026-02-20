@@ -1,66 +1,66 @@
 /* ═══════════════════════════════════════════
-   V2 FUTURISTIC DARK MODE DESIGN TOKENS
+   V2 FUTURISTIC LIGHT THEME DESIGN TOKENS
    ═══════════════════════════════════════════ */
 
 :root {
-  /* ── Core Palette ── */
-  --color-primary: #e8eaed;
-  --color-primary-deep: #ffffff;
-  --color-secondary: #0a0a0f;
-  --color-surface: #06060b;
-  --color-surface-raised: #0e0e16;
-  --color-surface-overlay: #12121c;
+  /* ── Core Palette (Light Futuristic) ── */
+  --color-primary: #0a0b0e;
+  --color-primary-deep: #000000;
+  --color-secondary: #f0f2f5;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f5f7fa;
+  --color-surface-overlay: #eef1f5;
 
-  /* ── Neon Accents ── */
-  --color-accent: #00e5ff;
-  --color-accent-deep: #00b8d4;
-  --color-accent-glow: rgba(0, 229, 255, 0.25);
-  --color-accent-2: #b388ff;
-  --color-accent-2-glow: rgba(179, 136, 255, 0.2);
-  --color-success: #00e676;
-  --color-success-glow: rgba(0, 230, 118, 0.2);
-  --color-warning: #ffab00;
+  /* ── Futuristic Accents ── */
+  --color-accent: #0071e3;
+  --color-accent-deep: #0051a2;
+  --color-accent-glow: rgba(0, 113, 227, 0.18);
+  --color-accent-2: #7c3aed;
+  --color-accent-2-glow: rgba(124, 58, 237, 0.12);
+  --color-success: #10b981;
+  --color-success-glow: rgba(16, 185, 129, 0.15);
+  --color-warning: #f59e0b;
 
   /* ── Text ── */
-  --color-text: rgba(232, 234, 237, 0.95);
-  --color-text-muted: rgba(232, 234, 237, 0.5);
-  --color-text-dim: rgba(232, 234, 237, 0.3);
+  --color-text: #1a1a2e;
+  --color-text-muted: #6b7280;
+  --color-text-dim: #9ca3af;
 
   /* ── Borders & Shadows ── */
-  --color-border: rgba(255, 255, 255, 0.06);
-  --color-border-glow: rgba(0, 229, 255, 0.15);
-  --color-card-shadow: rgba(0, 0, 0, 0.4);
-  --color-card-shadow-hover: rgba(0, 0, 0, 0.6);
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-glow: rgba(0, 113, 227, 0.1);
+  --color-card-shadow: rgba(0, 0, 0, 0.04);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.12);
 
-  /* ── Holographic Glass ── */
-  --glass-surface-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --glass-surface: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-  --glass-surface-strong: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-soft: rgba(255, 255, 255, 0.04);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  --glass-shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  --glass-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px var(--color-accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  /* ── Frosted Glass (Light Futuristic) ── */
+  --glass-surface-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.25) 100%);
+  --glass-surface: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.45) 100%);
+  --glass-surface-strong: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.7) 100%);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-border-soft: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  --glass-shadow-strong: 0 12px 36px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+  --glass-shadow-hover: 0 20px 50px rgba(0, 113, 227, 0.12), 0 8px 30px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.8);
 
   /* ── Nav ── */
-  --color-nav-glass: rgba(6, 6, 11, 0.85);
-  --nav-glass-top: linear-gradient(145deg, rgba(14, 14, 22, 0.6) 0%, rgba(6, 6, 11, 0.4) 100%);
-  --nav-glass-scrolled: linear-gradient(145deg, rgba(14, 14, 22, 0.92) 0%, rgba(6, 6, 11, 0.88) 100%);
-  --nav-border-top: rgba(255, 255, 255, 0.04);
-  --nav-border-scrolled: rgba(0, 229, 255, 0.12);
+  --color-nav-glass: rgba(255, 255, 255, 0.8);
+  --nav-glass-top: linear-gradient(145deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.2) 100%);
+  --nav-glass-scrolled: linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.8) 100%);
+  --nav-border-top: rgba(255, 255, 255, 0.3);
+  --nav-border-scrolled: rgba(255, 255, 255, 0.7);
   --nav-shadow-top: 0 4px 20px rgba(0, 0, 0, 0);
-  --nav-shadow-scrolled: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.05);
-  --nav-highlight-line: linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.3) 50%, transparent 100%);
-  --nav-sheen-gradient: linear-gradient(110deg, transparent 0%, rgba(0, 229, 255, 0.05) 36%, rgba(0, 229, 255, 0.2) 50%, rgba(0, 229, 255, 0.05) 64%, transparent 100%);
-  --nav-link-hover-bg: rgba(0, 229, 255, 0.06);
-  --nav-link-active-bg: rgba(0, 229, 255, 0.1);
-  --nav-menu-glass: linear-gradient(180deg, rgba(14, 14, 22, 0.97) 0%, rgba(6, 6, 11, 0.95) 100%);
+  --nav-shadow-scrolled: 0 10px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 113, 227, 0.04);
+  --nav-highlight-line: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+  --nav-sheen-gradient: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.08) 36%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.08) 64%, transparent 100%);
+  --nav-link-hover-bg: rgba(0, 113, 227, 0.05);
+  --nav-link-active-bg: rgba(0, 113, 227, 0.08);
+  --nav-menu-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.94) 100%);
 
   /* ── Gradients ── */
-  --gradient-primary: linear-gradient(135deg, #06060b 0%, #0a0a12 50%, #10101a 100%);
-  --gradient-accent: linear-gradient(135deg, #00e5ff 0%, #b388ff 100%);
-  --gradient-neon-border: linear-gradient(135deg, rgba(0, 229, 255, 0.4), rgba(179, 136, 255, 0.4));
-  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(0, 229, 255, 0.08) 0%, transparent 60%);
+  --gradient-primary: linear-gradient(135deg, #0a0b0e 0%, #1a1b22 50%, #252630 100%);
+  --gradient-accent: linear-gradient(135deg, #0071e3 0%, #7c3aed 100%);
+  --gradient-neon-border: linear-gradient(135deg, rgba(0, 113, 227, 0.3), rgba(124, 58, 237, 0.3));
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(0, 113, 227, 0.06) 0%, transparent 60%);
 
   /* ── Typography ── */
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
@@ -69,9 +69,9 @@
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
 
   /* ── Geometry ── */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
   --radius-pill: 9999px;
 
   --space-2xs: 0.25rem;
@@ -103,7 +103,7 @@
   --fx-particles-highlight: 1;
 }
 
-/* Font presets still supported but adjusted for dark theme */
+/* Font presets */
 :root[data-font-preset='classic-dm'] {
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-heading: 'DM Sans', 'Segoe UI', sans-serif;

@@ -12,14 +12,14 @@
 }
 
 .cta--secondary {
-  border-color: rgba(255, 255, 255, 0.1);
-  color: var(--color-text);
-  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.85);
 
   &:hover {
     transform: translateY(-2px);
-    border-color: rgba(0, 229, 255, 0.3);
-    color: var(--color-accent);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 229, 255, 0.05);
+    border-color: var(--color-accent);
+    color: var(--color-accent-deep);
+    box-shadow: 0 10px 28px rgba(0, 113, 227, 0.1);
   }
 }
