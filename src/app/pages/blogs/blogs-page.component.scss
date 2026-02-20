@@ -7,7 +7,7 @@
   background:
     radial-gradient(circle at 10% 8%, rgba(0, 113, 227, 0.1), transparent 34%),
     radial-gradient(circle at 88% 92%, rgba(110, 110, 115, 0.12), transparent 40%),
-    linear-gradient(180deg, #f8f8fa 0%, var(--color-secondary) 100%);
+    linear-gradient(180deg, var(--color-surface-raised) 0%, var(--color-secondary) 100%);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -42,7 +42,7 @@
   animation: particle-shimmer 7s ease-in-out infinite;
 }
 
-.blogs-page > * {
+.blogs-page>* {
   position: relative;
   z-index: 1;
 }
@@ -280,6 +280,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .blogs-page::before,
   .blogs-page::after {
     animation: none;

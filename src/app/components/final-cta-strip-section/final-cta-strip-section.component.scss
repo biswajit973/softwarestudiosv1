@@ -1,5 +1,5 @@
 .final-cta {
-  background: var(--gradient-primary);
+  background: var(--color-surface-raised);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -11,10 +11,10 @@
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
-  opacity: 0.15;
+  opacity: 0.2;
 }
 
 .final-cta::after {
@@ -24,12 +24,10 @@
   pointer-events: none;
   z-index: 0;
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.34) 1px, transparent 1.7px),
-    radial-gradient(circle, rgba(0, 113, 227, 0.32) 1px, transparent 1.9px);
-  background-size:
-    170px 170px,
-    230px 230px;
-  opacity: 0.3;
+    radial-gradient(circle, rgba(0, 229, 255, 0.25) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(179, 136, 255, 0.2) 1px, transparent 1.9px);
+  background-size: 170px 170px, 230px 230px;
+  opacity: 0.2;
   animation: particle-drift 23s ease-in-out infinite alternate;
 }
 
@@ -42,14 +40,14 @@
 }
 
 .final-cta h2 {
-  color: #fff;
+  color: var(--color-primary);
   font-size: clamp(1.9rem, 4vw, 2.8rem);
 }
 
 .final-cta p {
   max-width: 70ch;
   margin-inline: auto;
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--color-text-muted);
 }
 
 .final-cta__actions {

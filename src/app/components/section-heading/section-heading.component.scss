@@ -1,5 +1,5 @@
 .section-heading {
-  margin-bottom: 1.85rem;
+  margin-bottom: 2rem;
 
   &__overline {
     margin: 0 0 0.55rem;
@@ -8,6 +8,7 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-accent);
+    text-shadow: 0 0 10px var(--color-accent-glow);
   }
 
   h2 {
@@ -16,6 +17,7 @@
     font-size: clamp(1.72rem, 3.2vw, 2.65rem);
     line-height: 1.2;
     max-width: 24ch;
+    letter-spacing: -0.02em;
   }
 
   &__subtitle {

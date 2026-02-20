@@ -18,12 +18,10 @@
   width: auto;
   height: 44px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.88);
-  background: linear-gradient(140deg, #40d978 0%, #25d366 55%, #1ea654 100%);
-  box-shadow:
-    0 14px 30px rgba(30, 166, 84, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.44);
-  color: #fff;
+  border: 1px solid rgba(0, 230, 118, 0.3);
+  background: linear-gradient(140deg, #00e676 0%, #00c853 55%, #009624 100%);
+  box-shadow: 0 14px 30px rgba(0, 230, 118, 0.2);
+  color: #000;
   align-items: center;
   justify-content: center;
   gap: 0.36rem;
@@ -32,8 +30,8 @@
   font-weight: 700;
   letter-spacing: 0.01em;
   transition:
-    transform 0.22s var(--ease-standard),
-    box-shadow 0.22s var(--ease-standard);
+    transform 0.3s var(--ease-spring),
+    box-shadow 0.3s var(--ease-spring);
 }
 
 .contact-fab__mobile-wa svg {
@@ -45,10 +43,8 @@
 
 .contact-fab__mobile-wa:hover,
 .contact-fab__mobile-wa:focus-visible {
-  transform: translateY(-2px);
-  box-shadow:
-    0 18px 34px rgba(30, 166, 84, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.52);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0, 230, 118, 0.3);
 }
 
 .contact-fab__menu {
@@ -75,23 +71,23 @@
 .contact-fab__item {
   width: 44px;
   height: 44px;
-  border-radius: 14px;
-  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   background: var(--glass-surface-strong);
   box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
   display: grid;
   place-items: center;
-  color: var(--color-primary);
+  color: var(--color-text-muted);
   text-decoration: none;
   position: relative;
   overflow: hidden;
   transition:
-    transform 0.22s var(--ease-standard),
-    border-color 0.22s var(--ease-standard),
-    box-shadow 0.22s var(--ease-standard),
-    color 0.22s var(--ease-standard);
+    transform 0.3s var(--ease-spring),
+    border-color 0.3s var(--ease-spring),
+    box-shadow 0.3s var(--ease-spring),
+    color 0.3s var(--ease-spring);
 }
 
 .contact-fab__item::after {
@@ -102,9 +98,9 @@
   width: 42%;
   height: 180%;
   background: linear-gradient(110deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.5) 48%,
-      rgba(255, 255, 255, 0) 100%);
+      transparent 0%,
+      rgba(0, 229, 255, 0.2) 48%,
+      transparent 100%);
   transform: translateX(-180%) rotate(18deg);
   opacity: 0;
   transition:
@@ -121,8 +117,8 @@
 .contact-fab__item:hover,
 .contact-fab__item:focus-visible {
   transform: translateY(-2px);
-  border-color: rgba(0, 113, 227, 0.34);
-  color: var(--color-accent-deep);
+  border-color: rgba(0, 229, 255, 0.3);
+  color: var(--color-accent);
   box-shadow: var(--glass-shadow-hover);
 }
 
@@ -149,9 +145,9 @@
   font-size: 0.67rem;
   font-weight: 700;
   letter-spacing: 0.03em;
-  color: var(--color-primary);
+  color: var(--color-text);
   background: var(--glass-surface-strong);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 999px;
   padding: 0.2rem 0.42rem;
   opacity: 0;
@@ -169,27 +165,23 @@
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.78);
-  background: linear-gradient(140deg, #2b8cff 0%, #0071e3 52%, #0051a2 100%);
-  box-shadow:
-    0 16px 32px rgba(0, 81, 162, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  background: linear-gradient(140deg, var(--color-accent) 0%, var(--color-accent-deep) 100%);
+  box-shadow: 0 16px 32px var(--color-accent-glow), 0 0 40px rgba(0, 229, 255, 0.1);
   display: grid;
   place-items: center;
   position: relative;
   overflow: hidden;
   cursor: pointer;
   transition:
-    transform 0.26s var(--ease-standard),
-    box-shadow 0.26s var(--ease-standard);
+    transform 0.3s var(--ease-spring),
+    box-shadow 0.3s var(--ease-spring);
 }
 
 .contact-fab__main:hover,
 .contact-fab--open .contact-fab__main {
   transform: translateY(-2px);
-  box-shadow:
-    0 20px 42px rgba(0, 81, 162, 0.36),
-    inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  box-shadow: 0 20px 42px var(--color-accent-glow), 0 0 60px rgba(0, 229, 255, 0.15);
 }
 
 .contact-fab__main::after {
@@ -200,9 +192,9 @@
   width: 44%;
   height: 190%;
   background: linear-gradient(110deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.62) 48%,
-      rgba(255, 255, 255, 0) 100%);
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 48%,
+      transparent 100%);
   transform: translateX(-180%) rotate(18deg);
   opacity: 0;
   transition:
@@ -220,7 +212,7 @@
   width: 19px;
   height: 19px;
   fill: none;
-  stroke: #fff;
+  stroke: #000;
   stroke-width: 1.9;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -232,21 +224,21 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.28);
+  box-shadow: 0 0 0 0 var(--color-accent-glow);
   animation: none;
 }
 
 @keyframes contact-pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 113, 227, 0.34);
+    box-shadow: 0 0 0 0 var(--color-accent-glow);
   }
 
   70% {
-    box-shadow: 0 0 0 14px rgba(0, 113, 227, 0);
+    box-shadow: 0 0 0 14px transparent;
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(0, 113, 227, 0);
+    box-shadow: 0 0 0 0 transparent;
   }
 }
 

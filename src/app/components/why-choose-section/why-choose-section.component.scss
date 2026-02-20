@@ -1,5 +1,5 @@
 .why-choose {
-  background: var(--color-secondary);
+  background: var(--color-surface);
 }
 
 .why-choose__grid {
@@ -9,28 +9,31 @@
 }
 
 .why-choose__card {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1.12rem;
-  box-shadow: 0 10px 26px var(--color-card-shadow);
+  background: var(--glass-surface);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
   transition:
-    transform 0.3s var(--ease-standard),
-    box-shadow 0.3s var(--ease-standard),
-    border-color 0.3s var(--ease-standard);
+    transform 0.4s var(--ease-spring),
+    box-shadow 0.4s var(--ease-spring),
+    border-color 0.4s var(--ease-spring);
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(15px) saturate(120%);
 }
 
 .why-choose__card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(10, 132, 255, 0.28);
-  box-shadow: 0 16px 34px var(--color-card-shadow-hover);
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(0, 229, 255, 0.2);
+  box-shadow: var(--shadow-hover);
 }
 
 .why-choose__icon {
   width: 2.3rem;
   height: 2.3rem;
-  border-radius: 999px;
-  background: rgba(232, 168, 56, 0.16);
+  border-radius: 10px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.1);
   display: grid;
   place-items: center;
   font-size: 1.08rem;
@@ -40,6 +43,7 @@
 .why-choose__card h3 {
   margin-bottom: 0.4rem;
   font-size: 1.03rem;
+  color: var(--color-primary);
 }
 
 .why-choose__card p {

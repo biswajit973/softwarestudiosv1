@@ -1,3 +1,7 @@
+/* ═══════════════════════════════════════════
+   V2 FUTURISTIC ANIMATIONS
+   ═══════════════════════════════════════════ */
+
 @keyframes float-soft {
 
   0%,
@@ -6,7 +10,7 @@
   }
 
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-14px);
   }
 }
 
@@ -18,7 +22,7 @@
   }
 
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-24px);
   }
 }
 
@@ -33,6 +37,18 @@
   50% {
     transform: scale(1.04);
     opacity: 0.8;
+  }
+}
+
+@keyframes pulse-neon {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--color-accent-glow), 0 0 20px rgba(0, 229, 255, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 15px var(--color-accent-glow), 0 0 60px rgba(0, 229, 255, 0.2);
   }
 }
 
@@ -72,11 +88,11 @@
   }
 
   50% {
-    transform: translate3d(-3%, -2%, 0) rotate(2deg);
+    transform: translate3d(-3%, -2%, 0) rotate(3deg);
   }
 
   100% {
-    transform: translate3d(3%, 2%, 0) rotate(-2deg);
+    transform: translate3d(3%, 2%, 0) rotate(-3deg);
   }
 }
 
@@ -84,20 +100,20 @@
 
   0%,
   100% {
-    opacity: 0.15;
-    filter: brightness(1);
+    opacity: 0.1;
+    filter: brightness(0.8);
   }
 
   50% {
-    opacity: 0.6;
-    filter: brightness(1.2);
+    opacity: 0.5;
+    filter: brightness(1.5);
   }
 }
 
 @keyframes slide-up-fade {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(50px);
   }
 
   to {
@@ -109,7 +125,7 @@
 @keyframes scale-up-fade {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.92);
   }
 
   to {
@@ -129,5 +145,51 @@
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes border-glow {
+
+  0%,
+  100% {
+    border-color: rgba(0, 229, 255, 0.15);
+  }
+
+  50% {
+    border-color: rgba(0, 229, 255, 0.4);
+  }
+}
+
+@keyframes text-glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.3), 0 0 40px rgba(0, 229, 255, 0.1);
+  }
+
+  50% {
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 0 80px rgba(0, 229, 255, 0.15);
   }
 }

@@ -16,7 +16,7 @@
 
   &__dot-soft {
     fill: var(--color-accent);
-    opacity: 0.76;
+    opacity: 0.5;
   }
 
   &__text {
@@ -43,7 +43,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-size: 0.56rem;
-    color: var(--color-text-muted);
+    color: var(--color-text-dim);
   }
 }
 
@@ -58,7 +58,7 @@
 .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--2,
 .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--3,
 .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--4 {
-  opacity: 0.42;
+  opacity: 0.35;
 }
 
 .brand-logo:hover .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--1,
@@ -71,7 +71,7 @@
 .brand-logo:focus-within .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--2 {
   transform: translate(0.8px, -0.8px) scale(1.02);
   opacity: 1;
-  filter: drop-shadow(0 0 2px rgba(0, 113, 227, 0.4));
+  filter: drop-shadow(0 0 4px var(--color-accent-glow));
   transition-delay: 0.04s;
 }
 
@@ -79,7 +79,7 @@
 .brand-logo:focus-within .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--3 {
   transform: translate(-0.7px, 0.8px) scale(1.02);
   opacity: 1;
-  filter: drop-shadow(0 0 2px rgba(0, 113, 227, 0.35));
+  filter: drop-shadow(0 0 4px var(--color-accent-glow));
   transition-delay: 0.08s;
 }
 
@@ -87,7 +87,7 @@
 .brand-logo:focus-within .brand-logo__mark[data-variant='pixel-frame'] .pixel-frame__cell--4 {
   transform: translate(0.85px, 0.85px) scale(1.02);
   opacity: 1;
-  filter: drop-shadow(0 0 2px rgba(0, 113, 227, 0.45));
+  filter: drop-shadow(0 0 4px var(--color-accent-glow));
   transition-delay: 0.12s;
 }
 
@@ -100,6 +100,6 @@
   color: #fff;
 
   .brand-logo__tag {
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 255, 255, 0.5);
   }
 }

@@ -1,25 +1,24 @@
 .pricing {
-  background: var(--color-secondary);
+  background: var(--color-surface);
 }
 
 .pricing__card {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(138deg, #05070e 0%, #111826 52%, #0a2b4b 100%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(138deg, #06060b 0%, #0a0a16 52%, #0e1525 100%);
+  border: 1px solid rgba(0, 229, 255, 0.12);
   border-radius: var(--radius-lg);
-  box-shadow: 0 16px 40px rgba(15, 52, 96, 0.2);
-  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 229, 255, 0.05);
+  color: var(--color-text);
   padding: clamp(1.1rem, 3vw, 2.1rem);
   display: grid;
   justify-items: center;
   text-align: center;
   gap: 0.85rem;
   transition:
-    border-color 0.32s var(--ease-standard),
-    box-shadow 0.32s var(--ease-standard),
-    transform 0.32s var(--ease-standard),
-    background 0.32s var(--ease-standard);
+    border-color 0.4s var(--ease-spring),
+    box-shadow 0.4s var(--ease-spring),
+    transform 0.4s var(--ease-spring);
 }
 
 .pricing__card::before,
@@ -32,13 +31,9 @@
 .pricing__card::before {
   inset: -12%;
   background:
-    radial-gradient(circle, rgba(255, 255, 255, 0.52) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(0, 113, 227, 0.52) 1px, transparent 1.6px),
-    radial-gradient(circle, rgba(52, 199, 89, 0.28) 1px, transparent 1.5px);
-  background-size:
-    78px 78px,
-    112px 112px,
-    138px 138px;
+    radial-gradient(circle, rgba(0, 229, 255, 0.3) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(179, 136, 255, 0.2) 1px, transparent 1.6px);
+  background-size: 78px 78px, 112px 112px;
   opacity: 0;
   animation: pricing-particle-glide 14s linear infinite paused;
   transition: opacity 0.34s var(--ease-standard);
@@ -49,33 +44,28 @@
   left: -26%;
   width: 52%;
   height: 180%;
-  background: linear-gradient(
-    110deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 48%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(110deg,
+      transparent 0%,
+      rgba(0, 229, 255, 0.15) 48%,
+      transparent 100%);
   transform: rotate(16deg);
   opacity: 0;
   animation: pricing-sheen-sweep 8s ease-in-out infinite paused;
   transition: opacity 0.3s var(--ease-standard);
 }
 
-.pricing__card > * {
+.pricing__card>* {
   position: relative;
   z-index: 1;
 }
 
 .pricing__card:hover,
 .pricing__card:focus-within {
-  border-color: rgba(255, 255, 255, 0.44);
+  border-color: rgba(0, 229, 255, 0.4);
   box-shadow:
-    0 24px 52px rgba(15, 52, 96, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.38);
-  transform: translateY(-2px);
-  background:
-    linear-gradient(140deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 48%, rgba(255, 255, 255, 0) 100%),
-    linear-gradient(138deg, #05070e 0%, #111826 52%, #0a2b4b 100%);
+    0 24px 60px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(0, 229, 255, 0.1);
+  transform: translateY(-3px);
 }
 
 .pricing__card:hover::before,
@@ -96,17 +86,19 @@
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 .pricing__card h3 {
   color: var(--color-accent);
   font-size: clamp(2.2rem, 6vw, 3.8rem);
   line-height: 1;
+  text-shadow: 0 0 30px var(--color-accent-glow);
 }
 
 .pricing__copy {
   max-width: 60ch;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-text-muted);
 }
 
 .pricing__actions {
@@ -129,11 +121,12 @@
 }
 
 .pricing__points li {
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--color-text-muted);
   font-size: 0.92rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .pricing__card::before,
   .pricing__card::after {
     animation: none;
@@ -155,6 +148,7 @@
 }
 
 @keyframes pricing-sheen-sweep {
+
   0%,
   100% {
     transform: translateX(-6%) rotate(16deg);

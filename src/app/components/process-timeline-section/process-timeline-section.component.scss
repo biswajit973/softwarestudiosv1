@@ -1,5 +1,5 @@
 .process {
-  background: var(--color-secondary);
+  background: var(--color-surface);
 }
 
 .process__grid {
@@ -12,7 +12,7 @@
   position: relative;
   padding: 1.25rem;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--glass-border-soft);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   background: var(--glass-surface);
   box-shadow: var(--shadow-soft);
   display: grid;
@@ -29,7 +29,7 @@
 
 .process__step:hover {
   transform: translateY(-5px) scale(1.02);
-  border-color: rgba(41, 128, 185, 0.4);
+  border-color: rgba(0, 229, 255, 0.2);
   box-shadow: var(--shadow-hover);
   background: var(--glass-surface-strong);
 }
@@ -65,8 +65,8 @@
   right: -0.8rem;
   width: 1.6rem;
   height: 2px;
-  background: linear-gradient(90deg, rgba(0, 113, 227, 0.7), rgba(52, 199, 89, 0.6));
-  box-shadow: 0 0 16px rgba(0, 113, 227, 0.4);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+  box-shadow: 0 0 16px var(--color-accent-glow);
   border-radius: 999px;
 }
 
@@ -78,8 +78,8 @@
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: rgba(52, 199, 89, 0.9);
-  box-shadow: 0 0 10px rgba(52, 199, 89, 0.8);
+  background: var(--color-accent);
+  box-shadow: 0 0 10px var(--color-accent-glow);
 }
 
 .process__head {
@@ -91,9 +91,9 @@
 
 .process__badge {
   width: fit-content;
-  background: rgba(0, 113, 227, 0.12);
-  border: 1px solid rgba(0, 113, 227, 0.28);
-  color: var(--color-accent-deep);
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  color: var(--color-accent);
   border-radius: var(--radius-pill);
   padding: 0.22rem 0.7rem;
   font-family: var(--font-mono);
@@ -106,13 +106,14 @@
   font-family: var(--font-mono);
   font-size: 0.76rem;
   font-weight: 700;
-  color: var(--color-text-muted);
+  color: var(--color-text-dim);
   letter-spacing: 0.08em;
 }
 
 .process__step h3 {
   font-size: 1.08rem;
   margin: 0.1rem 0 0.08rem;
+  color: var(--color-primary);
 }
 
 .process__step p {

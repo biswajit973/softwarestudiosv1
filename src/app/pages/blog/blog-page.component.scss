@@ -7,7 +7,7 @@
   background:
     radial-gradient(circle at 8% 8%, rgba(0, 113, 227, 0.1), transparent 35%),
     radial-gradient(circle at 88% 92%, rgba(110, 110, 115, 0.12), transparent 40%),
-    linear-gradient(180deg, #f8f8fa 0%, var(--color-secondary) 100%);
+    linear-gradient(180deg, var(--color-surface-raised) 0%, var(--color-secondary) 100%);
   color: var(--color-text);
   position: relative;
   isolation: isolate;
@@ -41,7 +41,7 @@
   animation: particle-shimmer 7.4s ease-in-out infinite;
 }
 
-.blog-page > * {
+.blog-page>* {
   position: relative;
   z-index: 1;
 }
@@ -260,6 +260,7 @@
 }
 
 @media (max-width: 768px) {
+
   .reader-header,
   .reader-main,
   .loading-state {
@@ -283,6 +284,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .blog-page::before,
   .blog-page::after {
     animation: none;

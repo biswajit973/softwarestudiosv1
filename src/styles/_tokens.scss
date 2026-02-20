@@ -1,55 +1,77 @@
+/* ═══════════════════════════════════════════
+   V2 FUTURISTIC DARK MODE DESIGN TOKENS
+   ═══════════════════════════════════════════ */
+
 :root {
-  --color-primary: #0a0b0e;
-  --color-primary-deep: #000000;
-  --color-secondary: #f5f5f7; /* Apple-esque background */
-  --color-surface: #ffffff;
-  --color-accent: #2980b9; /* Sophisticated blue */
-  --color-accent-deep: #1c5980;
-  --color-accent-glow: rgba(41, 128, 185, 0.3);
-  --color-success: #27ae60;
-  --color-text: #1d1d1f;
-  --color-text-muted: #86868b;
-  --color-border: rgba(0, 0, 0, 0.05);
-  --color-card-shadow: rgba(0, 0, 0, 0.03);
-  --color-card-shadow-hover: rgba(0, 0, 0, 0.1);
+  /* ── Core Palette ── */
+  --color-primary: #e8eaed;
+  --color-primary-deep: #ffffff;
+  --color-secondary: #0a0a0f;
+  --color-surface: #06060b;
+  --color-surface-raised: #0e0e16;
+  --color-surface-overlay: #12121c;
 
-  /* Premium Glassmorphism */
-  --glass-surface-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 100%);
-  --glass-surface: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
-  --glass-surface-strong: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 100%);
-  --glass-border: rgba(255, 255, 255, 0.8);
-  --glass-border-soft: rgba(255, 255, 255, 0.4);
-  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.6);
-  --glass-shadow-strong: 0 12px 32px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.8);
-  --glass-shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  /* ── Neon Accents ── */
+  --color-accent: #00e5ff;
+  --color-accent-deep: #00b8d4;
+  --color-accent-glow: rgba(0, 229, 255, 0.25);
+  --color-accent-2: #b388ff;
+  --color-accent-2-glow: rgba(179, 136, 255, 0.2);
+  --color-success: #00e676;
+  --color-success-glow: rgba(0, 230, 118, 0.2);
+  --color-warning: #ffab00;
 
-  /* Nav specific */
-  --color-nav-glass: rgba(255, 255, 255, 0.8);
-  --nav-glass-top: linear-gradient(145deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
-  --nav-glass-scrolled: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
-  --nav-border-top: rgba(255, 255, 255, 0.3);
-  --nav-border-scrolled: rgba(255, 255, 255, 0.8);
+  /* ── Text ── */
+  --color-text: rgba(232, 234, 237, 0.95);
+  --color-text-muted: rgba(232, 234, 237, 0.5);
+  --color-text-dim: rgba(232, 234, 237, 0.3);
+
+  /* ── Borders & Shadows ── */
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-glow: rgba(0, 229, 255, 0.15);
+  --color-card-shadow: rgba(0, 0, 0, 0.4);
+  --color-card-shadow-hover: rgba(0, 0, 0, 0.6);
+
+  /* ── Holographic Glass ── */
+  --glass-surface-soft: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+  --glass-surface: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --glass-surface-strong: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-soft: rgba(255, 255, 255, 0.04);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --glass-shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --glass-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px var(--color-accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  /* ── Nav ── */
+  --color-nav-glass: rgba(6, 6, 11, 0.85);
+  --nav-glass-top: linear-gradient(145deg, rgba(14, 14, 22, 0.6) 0%, rgba(6, 6, 11, 0.4) 100%);
+  --nav-glass-scrolled: linear-gradient(145deg, rgba(14, 14, 22, 0.92) 0%, rgba(6, 6, 11, 0.88) 100%);
+  --nav-border-top: rgba(255, 255, 255, 0.04);
+  --nav-border-scrolled: rgba(0, 229, 255, 0.12);
   --nav-shadow-top: 0 4px 20px rgba(0, 0, 0, 0);
-  --nav-shadow-scrolled: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --nav-highlight-line: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
-  --nav-sheen-gradient: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.1) 36%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.1) 64%, transparent 100%);
-  --nav-link-hover-bg: rgba(0, 0, 0, 0.03);
-  --nav-link-active-bg: rgba(0, 0, 0, 0.05);
-  --nav-menu-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-  
-  --gradient-primary: linear-gradient(135deg, #0a0b0e 0%, #1a1b1f 50%, #2a2b2f 100%);
-  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, #3498db 100%);
+  --nav-shadow-scrolled: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.05);
+  --nav-highlight-line: linear-gradient(90deg, transparent 0%, rgba(0, 229, 255, 0.3) 50%, transparent 100%);
+  --nav-sheen-gradient: linear-gradient(110deg, transparent 0%, rgba(0, 229, 255, 0.05) 36%, rgba(0, 229, 255, 0.2) 50%, rgba(0, 229, 255, 0.05) 64%, transparent 100%);
+  --nav-link-hover-bg: rgba(0, 229, 255, 0.06);
+  --nav-link-active-bg: rgba(0, 229, 255, 0.1);
+  --nav-menu-glass: linear-gradient(180deg, rgba(14, 14, 22, 0.97) 0%, rgba(6, 6, 11, 0.95) 100%);
 
-  /* Typography Defaults (Matches 'inter-clarity' visually) */
-  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  /* ── Gradients ── */
+  --gradient-primary: linear-gradient(135deg, #06060b 0%, #0a0a12 50%, #10101a 100%);
+  --gradient-accent: linear-gradient(135deg, #00e5ff 0%, #b388ff 100%);
+  --gradient-neon-border: linear-gradient(135deg, rgba(0, 229, 255, 0.4), rgba(179, 136, 255, 0.4));
+  --gradient-hero: radial-gradient(ellipse at 50% 0%, rgba(0, 229, 255, 0.08) 0%, transparent 60%);
+
+  /* ── Typography ── */
+  --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'SFMono-Regular', Consolas, Menlo, monospace;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
 
-  /* Geometry & Spacing */
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  /* ── Geometry ── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
   --radius-pill: 9999px;
 
   --space-2xs: 0.25rem;
@@ -63,7 +85,7 @@
   --section-pad: 120px;
   --container-max: 1320px;
 
-  /* Motion */
+  /* ── Motion ── */
   --ease-standard: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -73,7 +95,7 @@
   --motion-level-reduced: 1;
   --motion-duration-base: 0.4s;
 
-  /* FX Config */
+  /* ── FX ── */
   --fx-particles-services: 1;
   --fx-particles-industries: 1;
   --fx-particles-testimonials: 1;
@@ -81,6 +103,7 @@
   --fx-particles-highlight: 1;
 }
 
+/* Font presets still supported but adjusted for dark theme */
 :root[data-font-preset='classic-dm'] {
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-heading: 'DM Sans', 'Segoe UI', sans-serif;

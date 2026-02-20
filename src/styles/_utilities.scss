@@ -5,14 +5,15 @@
 
 .section {
   padding-block: var(--section-pad);
+  position: relative;
 }
 
 .reveal {
   opacity: 0;
-  transform: translateY(30px) scale(0.98);
+  transform: translateY(40px) scale(0.97);
   transition:
-    opacity calc(0.8s * var(--motion-level-reduced)) var(--ease-out-expo),
-    transform calc(0.8s * var(--motion-level-reduced)) var(--ease-out-expo);
+    opacity calc(0.9s * var(--motion-level-reduced)) var(--ease-out-expo),
+    transform calc(0.9s * var(--motion-level-reduced)) var(--ease-out-expo);
   will-change: opacity, transform;
 }
 
@@ -29,24 +30,26 @@
   border-radius: var(--radius-pill);
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-accent-deep);
-  background: rgba(0, 113, 227, 0.14);
-  border: 1px solid rgba(0, 113, 227, 0.3);
+  color: var(--color-accent);
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.15);
 }
 
 .link-arrow {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-weight: 600;
+  font-size: 0.85rem;
   transition: color 0.25s var(--ease-standard), gap 0.25s var(--ease-standard);
 
   &:hover {
-    color: var(--color-accent-deep);
-    gap: 0.5rem;
+    color: var(--color-accent);
+    gap: 0.6rem;
+    text-shadow: 0 0 12px var(--color-accent-glow);
   }
 }
 
@@ -54,8 +57,16 @@
   background: var(--glass-surface);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(14px) saturate(135%);
-  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+}
+
+/* Neon separator line utility */
+.neon-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  border: none;
+  opacity: 0.3;
 }
 
 @media (max-width: 560px) {
