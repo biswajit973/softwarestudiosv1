@@ -1,130 +1,69 @@
-<section class="hero section" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-particles"></div>
-  <div class="container hero-grid">
-    <div>
-      <div class="hero-badge reveal" appRevealOnScroll>
-        <div class="hero-badge-dot"></div>
-        Trusted Since 2014 · 12 Years of Excellence
-      </div>
+<section class="hero" id="home">
+  <!-- Cinematic Aurora Background -->
+  <div class="hero-aurora">
+    <div class="aurora-orb aurora-orb--1"></div>
+    <div class="aurora-orb aurora-orb--2"></div>
+    <div class="aurora-orb aurora-orb--3"></div>
+    <div class="aurora-orb aurora-orb--4"></div>
+  </div>
 
-      <h1 class="reveal d1" appRevealOnScroll>
-        Your Business Deserves<br />To Be <span class="accent">Found Online.</span>
-      </h1>
+  <!-- Premium Noise Texture Overlay -->
+  <div class="hero-noise"></div>
 
-      <p class="hero-typing-line reveal d2" appRevealOnScroll aria-live="polite" aria-atomic="true">
-        <span class="hero-typing-prefix">{{ heroTypingPrefix }}</span>
-        <span class="hero-typing-word">{{ heroTypingDisplay }}</span>
-      </p>
+  <!-- Spatial Holograms (Floating 3D Objects) -->
+  <div class="hero-spatial" aria-hidden="true">
+    <div class="spatial-obj spatial-obj--sphere-lg reveal d2" appRevealOnScroll></div>
+    <div class="spatial-obj spatial-obj--sphere-sm reveal d3" appRevealOnScroll></div>
+    <div class="spatial-obj spatial-obj--ring reveal d1" appRevealOnScroll></div>
 
-      <p class="hero-lead reveal d2" appRevealOnScroll>
-        Most businesses lose leads because customers cannot find them online. We fix that with
-        practical websites, apps, and growth systems that make people trust you and contact you faster.
-      </p>
-
-      <div class="hero-ctas reveal d2" appRevealOnScroll>
-        <a class="btn btn-pri focus-ring" [routerLink]="'/contact'">Start Your Digital Journey</a>
-        <a class="btn btn-out focus-ring" [routerLink]="'/services'">See Our Services</a>
-      </div>
-
-      <div class="hero-stats reveal d3" appRevealOnScroll>
-        <div class="h-stat">
-          <h4>12+</h4>
-          <span>Years of Expertise</span>
-        </div>
-        <div class="h-stat">
-          <h4>500+</h4>
-          <span>Projects Delivered</span>
-        </div>
-        <div class="h-stat">
-          <h4>15+</h4>
-          <span>Industries Served</span>
+    <!-- Floating Data Pill -->
+    <div class="spatial-obj spatial-obj--pill reveal d3" appRevealOnScroll>
+      <div class="glass-pill">
+        <div class="glass-pill__dot"></div>
+        <div class="glass-pill__info">
+          <strong>99.9%</strong>
+          <span>System Uptime</span>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="hero-visual hero-visual--scanner reveal d3" appRevealOnScroll>
-      <svg class="grid-pattern" viewBox="0 0 400 400">
-        <defs>
-          <pattern id="grid-scanner" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width=".5"></path>
-          </pattern>
-        </defs>
-        <rect width="400" height="400" fill="url(#grid-scanner)"></rect>
-      </svg>
+  <div class="container hero-content">
+    <div class="hero-badge reveal" appRevealOnScroll>
+      <div class="hero-badge-dot"></div>
+      V2.0 Quantum Interface
+    </div>
 
-      <div class="hero-scanner-beam"></div>
+    <h1 class="hero-title reveal d1" appRevealOnScroll>
+      Engineering The<br />
+      <span class="hero-title-accent">Intelligence</span> Era.
+    </h1>
 
-      <div class="hero-scanner-stream">
-        <div class="hero-scanner-line">
-          <article class="hero-scan-card" *ngFor="let card of scannerRenderCards; trackBy: trackScannerCard">
-            <div class="hero-scan-layer hero-scan-main">
-              <header class="hero-scan-head">
-                <span class="hero-scan-title">{{ card.title }}</span>
-                <span class="hero-scan-badge" [ngClass]="badgeClass(card.badgeTone)">{{ card.badge }}</span>
-              </header>
+    <p class="hero-lead reveal d2" appRevealOnScroll>
+      We build ultra-modern websites, apps, and scaling systems. Experience the fusion of exceptional design, spatial
+      aesthetics, and zero-latency performance.
+    </p>
 
-              <div class="hero-scan-content" [ngSwitch]="card.kind">
-                <div class="hero-scan-mini-bars" *ngSwitchCase="'bars'">
-                  <span *ngFor="let bar of card.bars" [style.height.%]="bar"></span>
-                </div>
+    <div class="hero-ctas reveal d2" appRevealOnScroll>
+      <a class="btn btn-pri focus-ring" [routerLink]="'/contact'">
+        <span>Initiate Project</span>
+        <svg viewBox="0 0 24 24" fill="none" class="btn-icon">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+      <a class="btn btn-glass focus-ring" [routerLink]="'/services'">Explore Solutions</a>
+    </div>
 
-                <div class="hero-scan-shield" *ngSwitchCase="'shield'">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                      fill="rgba(0,113,227,.1)"
-                      stroke="var(--c-gold)"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="M9 12l2 2 4-4"
-                      stroke="var(--c-gold)"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
-                  <strong>{{ card.metric }}</strong>
-                </div>
-
-                <div class="hero-scan-progress" *ngSwitchCase="'progress'">
-                  <div class="hero-scan-progress-row">
-                    <span>On Track</span>
-                    <strong>{{ card.progress }}%</strong>
-                  </div>
-                  <div class="hero-scan-track">
-                    <div class="hero-scan-track-fill" [style.width.%]="card.progress ?? 0"></div>
-                  </div>
-                </div>
-
-                <div class="hero-scan-ring" *ngSwitchCase="'ring'">
-                  <div class="hero-scan-ring-meter"><span>{{ card.progress }}%</span></div>
-                  <strong>{{ card.metric }}</strong>
-                </div>
-
-                <div class="hero-scan-alert" *ngSwitchCase="'alert'">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                    <path
-                      d="M15 17h5l-1.4-1.4a2 2 0 0 1-.6-1.4V11a6 6 0 0 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5"
-                    ></path>
-                    <path d="M10 17a2 2 0 0 0 4 0"></path>
-                  </svg>
-                  <strong>{{ card.metric }}</strong>
-                </div>
-              </div>
-
-              <p class="hero-scan-subline">{{ card.subline }}</p>
-            </div>
-
-            <div class="hero-scan-layer hero-scan-insight">
-              <h5>{{ card.insightTitle }}</h5>
-              <ul>
-                <li *ngFor="let point of card.insightPoints">{{ point }}</li>
-              </ul>
-            </div>
-          </article>
-        </div>
+    <div class="hero-stats reveal d3" appRevealOnScroll>
+      <div class="h-stat">
+        <div class="h-stat__val">12+</div>
+        <div class="h-stat__lbl">Years Innovating</div>
+      </div>
+      <div class="h-stat__divider"></div>
+      <div class="h-stat">
+        <div class="h-stat__val">500+</div>
+        <div class="h-stat__lbl">Digital Products</div>
       </div>
     </div>
   </div>
