@@ -57,13 +57,13 @@
   bottom: calc(100% + 0.54rem);
   display: grid;
   gap: 0.45rem;
-  transform: translateY(10px) scale(0.94);
+  transform: translateY(12px) scale(0.9);
   transform-origin: bottom left;
   opacity: 0;
   pointer-events: none;
   transition:
-    transform 0.32s var(--ease-standard),
-    opacity 0.28s var(--ease-standard);
+    transform 0.5s var(--ease-spring),
+    opacity 0.4s var(--ease-out-expo);
 }
 
 .contact-fab--open .contact-fab__menu {
@@ -101,12 +101,10 @@
   left: -45%;
   width: 42%;
   height: 180%;
-  background: linear-gradient(
-    110deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 48%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(110deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 48%,
+      rgba(255, 255, 255, 0) 100%);
   transform: translateX(-180%) rotate(18deg);
   opacity: 0;
   transition:
@@ -201,12 +199,10 @@
   left: -45%;
   width: 44%;
   height: 190%;
-  background: linear-gradient(
-    110deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.62) 48%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(110deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.62) 48%,
+      rgba(255, 255, 255, 0) 100%);
   transform: translateX(-180%) rotate(18deg);
   opacity: 0;
   transition:
@@ -255,6 +251,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .contact-fab__menu,
   .contact-fab__item,
   .contact-fab__main,

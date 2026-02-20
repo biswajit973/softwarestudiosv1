@@ -9,15 +9,16 @@
 
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px) scale(0.98);
   transition:
-    opacity calc(0.6s * var(--motion-level-reduced)) var(--ease-standard),
-    transform calc(0.6s * var(--motion-level-reduced)) var(--ease-standard);
+    opacity calc(0.8s * var(--motion-level-reduced)) var(--ease-out-expo),
+    transform calc(0.8s * var(--motion-level-reduced)) var(--ease-out-expo);
+  will-change: opacity, transform;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .pill-badge {

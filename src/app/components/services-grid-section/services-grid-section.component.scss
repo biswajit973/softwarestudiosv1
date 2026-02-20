@@ -9,23 +9,28 @@
 }
 
 .services__card {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1.05rem;
-  box-shadow: 0 10px 26px var(--color-card-shadow);
-  display: grid;
-  gap: 0.56rem;
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
   transition:
-    transform 0.3s var(--ease-standard),
-    box-shadow 0.3s var(--ease-standard),
-    border-color 0.3s var(--ease-standard);
+    transform 0.4s var(--ease-spring),
+    box-shadow 0.4s var(--ease-spring),
+    border-color 0.4s var(--ease-spring),
+    background 0.4s var(--ease-spring);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
 }
 
 .services__card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(10, 132, 255, 0.28);
-  box-shadow: 0 16px 34px var(--color-card-shadow-hover);
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(41, 128, 185, 0.4);
+  box-shadow: var(--shadow-hover);
+  background: var(--glass-surface-strong);
 }
 
 .services__icon {
