@@ -1,30 +1,56 @@
 .final-cta {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #05070e 0%, #0d1225 35%, #050a1a 100%);
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  padding: 5rem 0;
 }
 
+/* ── Cosmic Starfield ── */
 .final-cta::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -50%;
   pointer-events: none;
-  background: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.15;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 80px 80px, 140px 140px, 250px 250px;
+  background-position: 0 0, 40px 60px, 110px 10px;
+  animation: cosmic-stars 120s linear infinite;
+  z-index: 0;
 }
 
+/* ── Glowing Nebula (Galaxy effect) ── */
 .final-cta::after {
   content: '';
   position: absolute;
-  inset: -12%;
+  inset: -20%;
   pointer-events: none;
-  z-index: 0;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.34) 1px, transparent 1.7px), radial-gradient(circle, rgba(0, 113, 227, 0.32) 1px, transparent 1.9px);
-  background-size: 170px 170px, 230px 230px;
-  opacity: 0.3;
-  animation: particle-drift 23s ease-in-out infinite alternate;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.35) 0%, transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(0, 113, 227, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.15) 0%, transparent 60%);
+  animation: cosmic-nebula 24s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+}
+
+/* ── Playful Colored Particles ── */
+.final-cta__particles {
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    radial-gradient(circle, #00e5ff 2px, transparent 2.5px),
+    radial-gradient(circle, #b388ff 1.5px, transparent 2px),
+    radial-gradient(circle, #0071e3 1px, transparent 1.5px);
+  background-size: 280px 280px, 360px 360px, 180px 180px;
+  background-position: 0 0, 150px 150px, 50px 50px;
+  opacity: 0.8;
+  animation: cosmic-particles 45s linear infinite;
 }
 
 .final-cta__inner {
@@ -36,26 +62,68 @@
 }
 
 .final-cta h2 {
-  color: #fff;
+  color: #ffffff;
   font-size: clamp(1.9rem, 4vw, 2.8rem);
+  text-shadow: 0 0 30px rgba(0, 113, 227, 0.4);
 }
 
 .final-cta p {
   max-width: 70ch;
   margin-inline: auto;
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
 }
 
 .final-cta__actions {
-  margin-top: 0.4rem;
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
   justify-content: center;
 }
 
+@keyframes cosmic-stars {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(800px);
+  }
+}
+
+@keyframes cosmic-particles {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-600px) rotate(15deg);
+  }
+}
+
+@keyframes cosmic-nebula {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.15) rotate(4deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9) rotate(-4deg);
+    opacity: 0.8;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .final-cta::after {
+
+  .final-cta::before,
+  .final-cta::after,
+  .final-cta__particles {
     animation: none;
   }
 }
