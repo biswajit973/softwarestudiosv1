@@ -1,0 +1,25 @@
+<section class="section portfolio" id="our-work">
+    <div class="container">
+        <app-section-heading overline="Our Work" title="See What We Have Built"
+            subtitle="We have built websites and apps for businesses across India and the world. Here are some of them."></app-section-heading>
+
+        <div class="portfolio__grid">
+            <a class="portfolio__card reveal" appRevealOnScroll *ngFor="let item of portfolioItems; let i = index"
+                [style.transitionDelay.ms]="i * 60" [href]="item.url" target="_blank" rel="noopener noreferrer">
+                <div class="portfolio__icon">
+                    <img [src]="faviconUrl(item.domain)" [alt]="item.name + ' logo'" width="32" height="32"
+                        loading="lazy" />
+                </div>
+                <div class="portfolio__info">
+                    <h3>{{ item.name }}</h3>
+                    <span class="portfolio__domain">{{ item.domain }}</span>
+                </div>
+                <span class="portfolio__arrow" aria-hidden="true">→</span>
+            </a>
+        </div>
+
+        <p class="portfolio__note reveal" appRevealOnScroll>
+            Want a website like these? Call us now — we will build one for your business too!
+        </p>
+    </div>
+</section>

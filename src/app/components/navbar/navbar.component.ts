@@ -28,6 +28,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     { label: 'Home', route: '/' },
     { label: 'Services', route: '/services' },
     { label: 'Industries', route: '/industries' },
+    { label: 'Works', route: '/works' },
+    { label: 'Testimonials', route: '/testimonials' },
     { label: 'Blogs', route: '/blogs' },
     { label: 'About', route: '/about' },
     { label: 'Contact', route: '/contact' }

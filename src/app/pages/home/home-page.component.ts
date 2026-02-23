@@ -4,6 +4,7 @@ import { StatsStripComponent } from '../../components/stats-strip/stats-strip.co
 import { AboutTeaserSectionComponent } from '../../components/about-teaser-section/about-teaser-section.component';
 import { WhyChooseSectionComponent } from '../../components/why-choose-section/why-choose-section.component';
 import { ServicesGridSectionComponent } from '../../components/services-grid-section/services-grid-section.component';
+import { PortfolioSectionComponent } from '../../components/portfolio-section/portfolio-section.component';
 import { IndustriesGridSectionComponent } from '../../components/industries-grid-section/industries-grid-section.component';
 import { ProcessTimelineSectionComponent } from '../../components/process-timeline-section/process-timeline-section.component';
 import { TestimonialsCarouselSectionComponent } from '../../components/testimonials-carousel-section/testimonials-carousel-section.component';
@@ -20,6 +21,7 @@ import { FinalCtaStripSectionComponent } from '../../components/final-cta-strip-
     AboutTeaserSectionComponent,
     WhyChooseSectionComponent,
     ServicesGridSectionComponent,
+    PortfolioSectionComponent,
     IndustriesGridSectionComponent,
     ProcessTimelineSectionComponent,
     TestimonialsCarouselSectionComponent,
@@ -30,4 +32,4 @@ import { FinalCtaStripSectionComponent } from '../../components/final-cta-strip-
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
-export class HomePageComponent {}
+export class HomePageComponent { }

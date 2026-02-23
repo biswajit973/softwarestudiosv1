@@ -33,6 +33,9 @@ export interface TestimonialItem {
   location: string;
   quote: string;
   rating: number;
+  featured?: boolean;
+  platform?: 'Google' | 'Clutch' | 'Trustpilot' | 'GoodFirms';
+  country?: string;
 }
 
 export interface InsightItem {
@@ -317,49 +320,122 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
+    name: 'James Mitchell',
+    role: 'CEO, TechNova Labs',
+    location: 'San Francisco',
+    country: '🇺🇸',
+    platform: 'Clutch',
+    featured: true,
+    quote:
+      'SoftwareStudios delivered a full-stack SaaS platform for us in under 3 months. Their technical depth, responsiveness, and design quality are world-class. We have continued working with them on two more products since.',
+    rating: 5
+  },
+  {
     name: 'Dr. Priya Sharma',
     role: 'Dental Clinic',
     location: 'Bhubaneswar',
+    country: '🇮🇳',
+    platform: 'Google',
     quote:
       'After our website went live, new appointment calls started every week. Patients can now find us easily on Google.',
+    rating: 5
+  },
+  {
+    name: 'Sophie Williams',
+    role: 'Founder, Bloom & Co',
+    location: 'London',
+    country: '🇬🇧',
+    platform: 'Trustpilot',
+    quote:
+      'They redesigned our entire e-commerce experience. Conversion rates jumped 40% within the first month. Brilliant team to work with.',
     rating: 5
   },
   {
     name: 'Adv. Ramesh Nayak',
     role: 'Legal Firm',
     location: 'Cuttack',
+    country: '🇮🇳',
+    platform: 'Google',
     quote:
       'My law firm now appears online when people search in my city. The process was simple and affordable.',
+    rating: 5
+  },
+  {
+    name: 'Ahmed Al Rashid',
+    role: 'COO, Gulf Logistics',
+    location: 'Dubai',
+    country: '🇦🇪',
+    platform: 'GoodFirms',
+    quote:
+      'We needed a fleet management dashboard built fast. They understood our requirements perfectly and delivered a polished product on time.',
     rating: 5
   },
   {
     name: 'Sunita Fashions',
     role: 'Boutique Business',
     location: 'Raipur',
+    country: '🇮🇳',
+    platform: 'Google',
     quote:
       'Their website and social setup helped us get orders from outside our city for the first time.',
+    rating: 5
+  },
+  {
+    name: 'Liam O\'Connor',
+    role: 'Director, GreenBuild AU',
+    location: 'Melbourne',
+    country: '🇦🇺',
+    platform: 'Clutch',
+    quote:
+      'Outstanding mobile app development. Our field inspection app works offline and syncs perfectly. Their Angular expertise is top-notch.',
     rating: 5
   },
   {
     name: 'Green Valley School',
     role: 'Educational Institution',
     location: 'Sambalpur',
+    country: '🇮🇳',
+    platform: 'Google',
     quote:
       'The school website and parent portal are easy to use. Admission inquiries increased after going digital.',
+    rating: 5
+  },
+  {
+    name: 'Wei Lin Tan',
+    role: 'CTO, PaySwift Asia',
+    location: 'Singapore',
+    country: '🇸🇬',
+    platform: 'Clutch',
+    quote:
+      'Reliable, fast, and incredibly detail-oriented. They built our fintech integration layer and it has been running flawlessly for 18 months.',
     rating: 5
   },
   {
     name: 'Sunrise Hotel & Resorts',
     role: 'Hospitality',
     location: 'Puri',
+    country: '🇮🇳',
+    platform: 'Google',
     quote:
       'Before this, we had almost no online visibility. Now online bookings are a major part of our revenue.',
+    rating: 5
+  },
+  {
+    name: 'Katrin Müller',
+    role: 'Head of Product, AutoVerse',
+    location: 'Berlin',
+    country: '🇩🇪',
+    platform: 'Trustpilot',
+    quote:
+      'Professional, communicative, and technically excellent. They integrated our IoT data pipeline with a beautiful real-time dashboard.',
     rating: 5
   },
   {
     name: 'Arora Construction',
     role: 'Real Estate',
     location: 'Delhi NCR',
+    country: '🇮🇳',
+    platform: 'Google',
     quote:
       'One team handled website, ads, and listing flow. We now get genuine buyer leads every week.',
     rating: 5
@@ -369,29 +445,29 @@ export const TESTIMONIALS: TestimonialItem[] = [
 export const INSIGHTS: InsightItem[] = [
   {
     id: 'usa-barber',
-    headline: 'If customers cannot find you online, they choose someone else.',
+    headline: 'If people can\'t find you online, they go to someone else.',
     body:
-      'Many Indian businesses still lose daily leads because they are not visible online. A simple digital presence can start recovering those missed customers.'
+      'Every day, customers search online for services like yours. If you are not there, they call your competitor. A simple website can change that.'
   },
   {
     id: 'search-behavior',
-    headline: 'People trust businesses they can quickly verify online.',
+    headline: 'People check online before they call or visit.',
     body:
-      'When someone searches for your service, they check website quality, reviews, and easy contact options before calling.'
+      'Before calling any business, people look at their website, photos, and reviews. If you look good online, they will trust you and call you.'
   },
   {
     id: 'reachability',
-    headline: 'Digitalization is not fashion. It is your lead engine.',
+    headline: 'A website is not a luxury. It brings you customers.',
     body:
-      'Software Studios helps you launch practical systems so customers can find you, trust you, and reach you without friction.'
+      'We help you get a website, app, or online page so customers can find you, trust you, and contact you easily.'
   }
 ];
 
 export const PRICING_HIGHLIGHT: PricingHighlight = {
   startingPrice: '₹24,999/-',
   features: ['No hidden charges', 'Flexible payment options', 'Ongoing support included'],
-  ctaPrimary: 'Get Custom Quote',
-  ctaSecondary: 'Talk to Us'
+  ctaPrimary: 'Get Price Now',
+  ctaSecondary: 'Call Us Now'
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -447,5 +523,21 @@ export const ROUTE_SEO: Record<string, SeoRouteMeta> = {
     ogTitle: 'Software Studios Blogs',
     ogDescription: 'Simple, practical insights for business owners and growth teams.',
     ogImage: '/og/software-studios-blogs.jpg'
+  },
+  '/works': {
+    title: 'Our Work | Software Studios',
+    description:
+      'See websites and apps built by Software Studios for businesses across India and the world. LED, healthcare, salons, e-commerce, and more.',
+    ogTitle: 'Software Studios — Our Work',
+    ogDescription: 'Websites and apps we have built for 500+ businesses. See our portfolio.',
+    ogImage: '/og/software-studios-works.jpg'
+  },
+  '/testimonials': {
+    title: 'Testimonials | Software Studios',
+    description:
+      'Read what our clients say about Software Studios. Real reviews from business owners who saw more calls, more customers, and more growth.',
+    ogTitle: 'Software Studios — Client Testimonials',
+    ogDescription: 'Real results, real feedback. 500+ happy clients across 15+ industries.',
+    ogImage: '/og/software-studios-testimonials.jpg'
   }
 };

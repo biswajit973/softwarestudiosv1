@@ -34,11 +34,11 @@ interface HeroScannerRenderCard extends HeroScannerCard {
 })
 export class HeroSectionComponent implements AfterViewInit, OnDestroy {
   readonly contact = CONTACT_INFO;
-  readonly heroTypingPrefix = 'Outcome:';
+  readonly heroTypingPrefix = 'Result:';
   readonly heroTypingPhrases = [
-    'Get found by real customers near you.',
-    'Turn visitors into calls, leads, and bookings.',
-    'Scale with practical tech and clear pricing.'
+    'Customers find you on Google and call you.',
+    'More calls, more orders, more growth.',
+    'Your business looks big and trusted online.'
   ];
   heroTypingDisplay = '';
 
@@ -117,7 +117,7 @@ export class HeroSectionComponent implements AfterViewInit, OnDestroy {
 
   get whatsappHref(): string {
     const msg = encodeURIComponent(
-      'Hello Software Studios, I want to start my digital journey. Please guide me with a free consultation.'
+      'Hi, I want to know about your services. Please help me.'
     );
     return `https://wa.me/${this.contact.whatsappPhone}?text=${msg}`;
   }

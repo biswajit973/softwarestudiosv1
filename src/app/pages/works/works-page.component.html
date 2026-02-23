@@ -1,0 +1,58 @@
+<section class="works-page section">
+    <div class="container">
+
+        <!-- Hero -->
+        <div class="works-page__hero reveal" appRevealOnScroll>
+            <span class="pill-badge">Our Work</span>
+            <h1 class="text-display">Websites & Apps We Have Built</h1>
+            <p>
+                We have helped businesses across India and the world look great online.
+                Here are some of the websites and apps we have made. Want one for your business? Just call us!
+            </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="works-page__filters reveal" appRevealOnScroll>
+            <button class="works-page__filter-btn focus-ring" *ngFor="let cat of categories"
+                [class.is-active]="activeFilter === cat" (click)="setFilter(cat)" type="button">
+                {{ cat }}
+            </button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="works-page__grid">
+            <a class="works-card reveal" appRevealOnScroll *ngFor="let item of filteredWorks; let i = index"
+                [style.transitionDelay.ms]="i * 60" [href]="item.url" target="_blank" rel="noopener noreferrer">
+                <!-- Top accent bar -->
+                <div class="works-card__accent"></div>
+
+                <div class="works-card__header">
+                    <div class="works-card__icon">
+                        <img [src]="faviconUrl(item.domain)" [alt]="item.name + ' logo'" width="40" height="40"
+                            loading="lazy" />
+                    </div>
+                    <span class="works-card__category">{{ item.category }}</span>
+                </div>
+
+                <h3 class="works-card__name">{{ item.name }}</h3>
+                <p class="works-card__desc">{{ item.description }}</p>
+
+                <div class="works-card__footer">
+                    <span class="works-card__domain">{{ item.domain }}</span>
+                    <span class="works-card__visit">Visit Site <span aria-hidden="true">→</span></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- CTA -->
+        <section class="works-page__cta reveal" appRevealOnScroll>
+            <h2>Want a Website Like These?</h2>
+            <p>Call us now — we will build one for your business too. It's free to talk!</p>
+            <div class="works-page__cta-actions">
+                <app-primary-cta label="📞 Call Now" href="tel:+916370931250"></app-primary-cta>
+                <app-primary-cta label="Get Free Quote" routerLink="/contact"></app-primary-cta>
+            </div>
+        </section>
+
+    </div>
+</section>

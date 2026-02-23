@@ -1,0 +1,131 @@
+<section class="ve-section" (mouseenter)="onTrackEnter()" (mouseleave)="onTrackLeave()">
+    <!-- Gradient fade masks -->
+    <div class="ve-mask ve-mask--left" aria-hidden="true"></div>
+    <div class="ve-mask ve-mask--right" aria-hidden="true"></div>
+
+    <!-- Left arrow -->
+    <button class="ve-arrow ve-arrow--left focus-ring" type="button" aria-label="Previous video"
+        [class.ve-arrow--visible]="showArrows" (click)="scrollPrev()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Scroll track -->
+    <div class="ve-track" #scrollTrack (mousedown)="onDragStart($event)" (mousemove)="onDragMove($event)"
+        (mouseup)="onDragEnd()" (mouseleave)="onDragEnd()" (touchstart)="onDragStart($event)"
+        (touchmove)="onDragMove($event)" (touchend)="onDragEnd()">
+        <div class="ve-card" *ngFor="let video of displayVideos; let i = index; trackBy: trackByIndex"
+            [class.ve-card--audio-active]="isAudioActive(i)" (mouseenter)="onCardEnter(i)"
+            (mouseleave)="onCardLeave(i)">
+            <!-- Video — always autoplaying muted -->
+            <video #videoEl class="ve-video" [src]="video.src" [poster]="video.poster || ''" muted playsinline loop
+                preload="auto"></video>
+
+            <!-- Loading spinner overlay -->
+            <div class="ve-loader" *ngIf="isLoading(i)" aria-label="Loading video">
+                <svg class="ve-loader__ring" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3"></circle>
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"
+                        stroke-dasharray="90 126"></circle>
+                </svg>
+            </div>
+
+            <!-- Dark gradient overlay -->
+            <div class="ve-overlay" aria-hidden="true"></div>
+
+            <!-- Pause / Play button (top-right) -->
+            <button class="ve-btn ve-btn--pause focus-ring" type="button"
+                [attr.aria-label]="isPaused(i) ? 'Play video' : 'Pause video'"
+                (click)="togglePause(i); $event.stopPropagation()">
+                <!-- Pause icon -->
+                <svg *ngIf="!isPaused(i)" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                    <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                </svg>
+                <!-- Play icon -->
+                <svg *ngIf="isPaused(i)" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+            </button>
+
+            <!-- Audio waveform indicator (visible when unmuted) -->
+            <div class="ve-waveform" [class.ve-waveform--active]="isAudioActive(i)" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <!-- Controls -->
+            <div class="ve-controls">
+                <!-- Audio lock toggle -->
+                <button class="ve-btn ve-btn--audio focus-ring" [class.ve-btn--audio-locked]="isAudioLocked(i)"
+                    type="button" [attr.aria-label]="isAudioLocked(i) ? 'Unlock audio' : 'Lock audio on'"
+                    (click)="toggleAudioLock(i); $event.stopPropagation()">
+                    <!-- Filled speaker (locked on) -->
+                    <svg *ngIf="isAudioLocked(i)" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                        stroke="none">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    <!-- Outline speaker (muted) -->
+                    <svg *ngIf="!isAudioLocked(i)" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+
+                <!-- Expand / fullscreen -->
+                <button class="ve-btn ve-btn--expand focus-ring" type="button" aria-label="View fullscreen"
+                    (click)="openModal(video); $event.stopPropagation()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <polyline points="9 21 3 21 3 15"></polyline>
+                        <line x1="21" y1="3" x2="14" y2="10"></line>
+                        <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Text overlay -->
+            <div class="ve-card-info" *ngIf="video.title">
+                <h4>{{ video.title }}</h4>
+                <p *ngIf="video.subtitle">{{ video.subtitle }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right arrow -->
+    <button class="ve-arrow ve-arrow--right focus-ring" type="button" aria-label="Next video"
+        [class.ve-arrow--visible]="showArrows" (click)="scrollNext()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+</section>
+
+<!-- ═══════ Fullscreen Modal ═══════ -->
+<div class="ve-modal" *ngIf="modalOpen" [@modalAnim]="'visible'" (click)="closeModal()">
+    <div class="ve-modal__backdrop"></div>
+    <div class="ve-modal__content" [@modalScale]="'visible'" (click)="$event.stopPropagation()">
+        <video #modalVideoEl class="ve-modal__video" [src]="modalVideo?.src || ''" [poster]="modalVideo?.poster || ''"
+            autoplay controls loop playsinline></video>
+        <button class="ve-modal__close focus-ring" type="button" aria-label="Close fullscreen" (click)="closeModal()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="ve-modal__info" *ngIf="modalVideo?.title">
+            <h3>{{ modalVideo?.title }}</h3>
+            <p *ngIf="modalVideo?.subtitle">{{ modalVideo?.subtitle }}</p>
+        </div>
+    </div>
+</div>

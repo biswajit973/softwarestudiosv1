@@ -1,0 +1,146 @@
+<section class="testimonials-page section">
+    <div class="container">
+
+        <!-- Hero -->
+        <div class="testimonials-page__hero reveal" appRevealOnScroll>
+            <span class="pill-badge">Testimonials</span>
+            <h1 class="text-display">What Our Clients Say About Us</h1>
+            <p>
+                Real feedback from business owners across the globe who trusted us.
+                They saw results — more calls, more customers, and more growth.
+            </p>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="testimonials-page__stats reveal" appRevealOnScroll>
+            <div class="testimonials-page__stat">
+                <h3>500+</h3>
+                <span>Happy Clients</span>
+            </div>
+            <div class="testimonials-page__stat">
+                <h3>4.9★</h3>
+                <span>Average Rating</span>
+            </div>
+            <div class="testimonials-page__stat">
+                <h3>12+</h3>
+                <span>Countries Served</span>
+            </div>
+            <div class="testimonials-page__stat">
+                <h3>15+</h3>
+                <span>Industries Served</span>
+            </div>
+        </div>
+
+        <!-- Trust Platform Bar -->
+        <div class="testimonials-page__trust reveal" appRevealOnScroll>
+            <span class="testimonials-page__trust-label">Trusted & reviewed on</span>
+            <div class="testimonials-page__trust-badges">
+                <span class="trust-badge" *ngFor="let p of platformBadges">
+                    <span class="trust-badge__icon">{{ p.icon }}</span>
+                    {{ p.name }}
+                </span>
+            </div>
+        </div>
+
+        <!-- Featured Testimonial (Hero Card) -->
+        <article class="featured-card reveal" appRevealOnScroll *ngIf="featuredTestimonial">
+            <div class="featured-card__accent" aria-hidden="true"></div>
+            <div class="featured-card__body">
+                <div class="featured-card__quote-mark" aria-hidden="true">"</div>
+                <p class="featured-card__quote">{{ featuredTestimonial.quote }}</p>
+                <div class="featured-card__author">
+                    <div class="featured-card__avatar">{{ featuredTestimonial.name.charAt(0) }}</div>
+                    <div class="featured-card__meta">
+                        <h3>{{ featuredTestimonial.name }}</h3>
+                        <p>{{ featuredTestimonial.role }}</p>
+                        <p class="featured-card__location">
+                            <span *ngIf="featuredTestimonial.country">{{ featuredTestimonial.country }}</span>
+                            {{ featuredTestimonial.location }}
+                            <span class="featured-card__platform" *ngIf="featuredTestimonial.platform">
+                                via {{ featuredTestimonial.platform }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="featured-card__stars">
+                    <span *ngFor="let s of stars" class="featured-card__star">★</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Video Reels -->
+        <div class="testimonials-page__reels reveal" appRevealOnScroll>
+            <app-section-heading overline="Video Reels" title="See Our Work in Action"
+                subtitle="Short video clips of real projects and client results."></app-section-heading>
+            <app-video-engine [videos]="videoReels"></app-video-engine>
+        </div>
+
+        <!-- Testimonial Marquee Carousel -->
+        <div class="marquee-wrap reveal" appRevealOnScroll>
+            <!-- Row 1: scrolls LEFT -->
+            <div class="marquee-row">
+                <div class="marquee-track marquee-track--left">
+                    <ng-container *ngFor="let _ of [1, 2]">
+                        <article class="test-card" *ngFor="let item of row1">
+                            <div class="test-card__quote-mark" aria-hidden="true">"</div>
+                            <div class="test-card__stars">
+                                <span *ngFor="let s of stars" class="test-card__star">★</span>
+                            </div>
+                            <p class="test-card__quote">{{ item.quote }}</p>
+                            <div class="test-card__author">
+                                <div class="test-card__avatar">{{ item.name.charAt(0) }}</div>
+                                <div class="test-card__meta">
+                                    <h3>{{ item.name }}</h3>
+                                    <p>{{ item.role }}
+                                        <span class="test-card__location">
+                                            <span *ngIf="item.country">{{ item.country }}</span> {{ item.location }}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="test-card__platform" *ngIf="item.platform">via {{ item.platform }}</span>
+                        </article>
+                    </ng-container>
+                </div>
+            </div>
+
+            <!-- Row 2: scrolls RIGHT -->
+            <div class="marquee-row">
+                <div class="marquee-track marquee-track--right">
+                    <ng-container *ngFor="let _ of [1, 2]">
+                        <article class="test-card" *ngFor="let item of row2">
+                            <div class="test-card__quote-mark" aria-hidden="true">"</div>
+                            <div class="test-card__stars">
+                                <span *ngFor="let s of stars" class="test-card__star">★</span>
+                            </div>
+                            <p class="test-card__quote">{{ item.quote }}</p>
+                            <div class="test-card__author">
+                                <div class="test-card__avatar">{{ item.name.charAt(0) }}</div>
+                                <div class="test-card__meta">
+                                    <h3>{{ item.name }}</h3>
+                                    <p>{{ item.role }}
+                                        <span class="test-card__location">
+                                            <span *ngIf="item.country">{{ item.country }}</span> {{ item.location }}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="test-card__platform" *ngIf="item.platform">via {{ item.platform }}</span>
+                        </article>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <section class="testimonials-page__cta reveal" appRevealOnScroll>
+            <h2>Want Results Like These?</h2>
+            <p>Call us today — we will help your business grow online too. Free advice!</p>
+            <div class="testimonials-page__cta-actions">
+                <app-primary-cta label="📞 Call Now" href="tel:+916370931250"></app-primary-cta>
+                <app-primary-cta label="Get Free Consultation" routerLink="/contact"></app-primary-cta>
+            </div>
+        </section>
+
+    </div>
+</section>

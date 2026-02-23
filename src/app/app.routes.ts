@@ -38,6 +38,16 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/blog/blog-page.component').then((m) => m.BlogPageComponent)
   },
   {
+    path: 'works',
+    data: { animation: 'works' },
+    loadComponent: () => import('./pages/works/works-page.component').then((m) => m.WorksPageComponent)
+  },
+  {
+    path: 'testimonials',
+    data: { animation: 'testimonials' },
+    loadComponent: () => import('./pages/testimonials/testimonials-page.component').then((m) => m.TestimonialsPageComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
